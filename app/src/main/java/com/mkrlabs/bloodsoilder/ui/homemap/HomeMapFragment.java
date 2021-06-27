@@ -16,7 +16,6 @@ import com.mkrlabs.bloodsoilder.R;
 public class HomeMapFragment extends Fragment {
 
     public HomeMapFragment() {
-        // Required empty public constructor
     }
 
 
