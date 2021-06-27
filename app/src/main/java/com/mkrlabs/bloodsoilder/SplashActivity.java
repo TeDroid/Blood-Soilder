@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.mkrlabs.bloodsoilder.Utils.DisplayUtils;
+import com.mkrlabs.bloodsoilder.ui.HomeActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
             }
         },2500);
     }
