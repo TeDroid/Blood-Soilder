@@ -10,4 +10,8 @@
 
     <color name="primaryColor">#B60000</color>
     <color name="secondaryColor">#D77373</color>
+
+    <color name="faded_white">#EDBFBF</color>
+    <color name="pale_white">#D77373</color>
+    <color name="ash_black">#737373</color>
 </resources>
