@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center">
+
+
+    <EditText
+        android:id="@+id/reportEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/primaryColor"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="center"
+        android:hint="Enter OTP code"
+        android:inputType="text"
+        android:textColor="@color/primaryColor"
+        android:textColorHint="@color/ash_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportTitleTxt" />
+
+    <android.widget.Button
+        android:id="@+id/submitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_18sdp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/primary_color_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:paddingLeft="@dimen/_39sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingRight="@dimen/_39sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportEdt" />
+
+    <TextView
+        android:id="@+id/reportTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Report"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/profileImage"
+        app:layout_constraintStart_toStartOf="@+id/profileImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/seeker_profile_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/reportIconImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_report_icon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

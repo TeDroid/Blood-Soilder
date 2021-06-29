@@ -10,21 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodSoilder">
         <activity android:name=".ui.account.userinformation.AddProfilePictureActivity">
+
+        </activity>
+        <activity android:name=".ui.account.userinformation.DonorInfoActivity">
+
+        </activity>
+        <activity android:name=".ui.account.userinformation.NidInfoActivity">
+
+        </activity>
+        <activity android:name=".ui.account.userinformation.PersonalInfoActivity" />
+        <activity android:name=".ui.account.VerifyAccountActivity" />
+        <activity android:name=".ui.account.CreateAccountActivity" >
+
+        </activity>
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.account.userinformation.DonorInfoActivity">
-
-        </activity>
-        <activity android:name=".ui.account.userinformation.NidInfoActivity"></activity>
-        <activity android:name=".ui.account.userinformation.PersonalInfoActivity" />
-        <activity android:name=".ui.account.VerifyAccountActivity" />
-        <activity android:name=".ui.account.CreateAccountActivity" />
-        <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".SplashActivity" />
         <activity android:name=".MainActivity" />
 
         <meta-data
