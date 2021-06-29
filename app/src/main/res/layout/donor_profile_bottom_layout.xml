@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <android.widget.Button
+        android:id="@+id/callBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_26sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/white_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:drawablePadding="@dimen/_6sdp"
+        android:paddingLeft="@dimen/_29sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingRight="@dimen/_33sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="Call"
+        android:drawableLeft="@drawable/ic_call_button_icon"
+        android:textAllCaps="false"
+        android:textColor="@drawable/white_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingTxt" />
+
+    <android.widget.Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_26sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/primary_color_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:paddingLeft="@dimen/_39sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingRight="@dimen/_39sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/callBtn"
+        app:layout_constraintTop_toBottomOf="@+id/ratingTxt" />
+
+    <TextView
+        android:id="@+id/ratingUserCountTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginLeft="@dimen/_2sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="14"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ratingTxt"
+        app:layout_constraintStart_toEndOf="@+id/userCountIcon" />
+
+    <ImageView
+        android:id="@+id/userCountIcon"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:src="@drawable/ic_rating_user_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingTxt"
+        app:layout_constraintStart_toEndOf="@+id/ratingTxt"
+        app:layout_constraintTop_toTopOf="@+id/ratingTxt" />
+
+    <TextView
+        android:id="@+id/ratingTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Rating"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/starIcon"
+        app:layout_constraintTop_toBottomOf="@+id/starIcon" />
+
+    <TextView
+        android:id="@+id/ratingPointTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="4.2"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_23sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/starIcon"
+        app:layout_constraintTop_toTopOf="@+id/starIcon" />
+
+    <TextView
+        android:id="@+id/addressTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Town hall, Mohammadpur"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/donorNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/donorNameTxt" />
+
+    <TextView
+        android:id="@+id/donorNameTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Ashraful Islam"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bloodGroupTxt"
+        app:layout_constraintTop_toTopOf="@+id/donorImage" />
+
+    <TextView
+        android:id="@+id/bloodGroupTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blood_group_background_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="center"
+        android:text="A+"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:translationZ="@dimen/_90sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/donorImage"
+        app:layout_constraintEnd_toEndOf="@+id/donorImage"
+        app:layout_constraintStart_toEndOf="@+id/donorImage"
+        app:layout_constraintTop_toBottomOf="@+id/donorImage" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/donorImage"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/user_image_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="bloodGroupTxt"
+        />
+
+    <ImageView
+        android:id="@+id/starIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_26sdp"
+        android:layout_marginLeft="@dimen/_26sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:src="@drawable/ic_star_rating_icon"
+        app:layout_constraintStart_toStartOf="@+id/addressTxt"
+        app:layout_constraintTop_toBottomOf="@+id/addressTxt" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="ratingTxt"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

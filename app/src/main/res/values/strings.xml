@@ -3,4 +3,5 @@
     <string name="requestFragment">Request</string>
     <string name="activityFragment">Activity</string>
     <string name="profileFragment">My Profile</string>
+    <string name="resend"><u>Resend</u></string>
 </resources>

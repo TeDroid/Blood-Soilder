@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+
+    <android.widget.Button
+        android:id="@+id/acceptBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/primary_color_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:padding="1.5dp"
+        android:text="Accept"
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/barrier3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/declainBtn" />
+
+    <android.widget.Button
+        android:id="@+id/declainBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/white_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:padding="1.5dp"
+        android:text="Declain"
+        android:textAllCaps="false"
+        android:textColor="@drawable/white_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/barrier3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/acceptBtn"
+        app:layout_constraintStart_toEndOf="@+id/callDonorBtn" />
+
+    <android.widget.Button
+        android:id="@+id/callDonorBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/white_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:paddingTop="1.5dp"
+        android:paddingBottom="1.5dp"
+        android:text="call"
+        android:textAllCaps="false"
+        android:textColor="@drawable/white_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/declainBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/minAgoTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="9 min ago"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@+id/timeImage"
+        app:layout_constraintTop_toTopOf="@+id/timeImage" />
+
+    <ImageView
+        android:id="@+id/timeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="@+id/startRatingIcon"
+        app:layout_constraintTop_toBottomOf="@+id/startRatingIcon"
+        android:src="@drawable/ic_time_icon" />
+
+    <TextView
+        android:id="@+id/ratingUserTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="14"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/userIcon"
+        app:layout_constraintTop_toBottomOf="@+id/donorAddressTxt" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_13sdp"
+        android:layout_marginLeft="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        app:layout_constraintStart_toEndOf="@+id/ratingCountTxt"
+        app:layout_constraintTop_toBottomOf="@+id/donorAddressTxt"
+        app:srcCompat="@drawable/ic_rating_user_icon"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/ratingCountTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="4.2"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/startRatingIcon"
+        app:layout_constraintTop_toBottomOf="@+id/donorAddressTxt" />
+
+    <ImageButton
+        android:id="@+id/startRatingIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@color/white"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/donorAddressTxt"
+        app:layout_constraintTop_toBottomOf="@+id/donorAddressTxt"
+        app:srcCompat="@drawable/ic_star_small_rating"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/donorAddressTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Town hall, Mohammadpur"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@+id/nameTxt"
+        app:layout_constraintStart_toStartOf="@+id/nameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
+
+    <TextView
+        android:id="@+id/nameTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Ashraful Islam "
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/donorBloodGroup"
+        app:layout_constraintTop_toTopOf="@+id/donorProfileImage" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/donorProfileImage"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/user_image_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+    <TextView
+        android:id="@+id/donorBloodGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blood_group_background_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="center"
+        android:text="A+"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:translationZ="@dimen/_90sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/donorProfileImage"
+        app:layout_constraintEnd_toEndOf="@+id/donorProfileImage"
+        app:layout_constraintStart_toEndOf="@+id/donorProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/donorProfileImage" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="donorBloodGroup"
+        tools:layout_editor_absoluteX="117dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="donorBloodGroup,minAgoTxt,timeImage"
+        tools:layout_editor_absoluteY="117dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
