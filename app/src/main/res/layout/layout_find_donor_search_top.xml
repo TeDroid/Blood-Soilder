@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.widget.Button
+        android:id="@+id/findDonorBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/primary_color_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:paddingLeft="@dimen/_39sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingRight="@dimen/_39sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="Find Donor"
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/setLocationEdt"
+        app:layout_constraintStart_toStartOf="@+id/setLocationEdt"
+        app:layout_constraintTop_toBottomOf="@+id/expensesCheckBox" />
+
+    <EditText
+        android:id="@+id/pickDateEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:backgroundTint="@color/primaryColor"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="center"
+        android:hint="Enter OTP code"
+        android:inputType="time"
+        android:textColor="@color/primaryColor"
+        android:textColorHint="@color/ash_black"
+        app:layout_constraintEnd_toStartOf="@+id/pickTimeEdt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTxt" />
+
+    <EditText
+        android:id="@+id/setLocationEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginLeft="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        android:layout_marginRight="@dimen/_24sdp"
+        android:backgroundTint="@color/primaryColor"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="center"
+        android:hint="Enter OTP code"
+        android:inputType="text"
+        android:textColor="@color/primaryColor"
+        android:textColorHint="@color/ash_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationTxt" />
+
+    <EditText
+        android:id="@+id/pickTimeEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:backgroundTint="@color/primaryColor"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="center"
+        android:hint="Enter OTP code"
+        android:inputType="date"
+        android:textColor="@color/primaryColor"
+        android:textColorHint="@color/ash_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pickDateEdt"
+        app:layout_constraintTop_toTopOf="@+id/pickDateEdt" />
+
+    <android.widget.Button
+        android:id="@+id/bMinusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="B+"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bPlusGroup"
+        app:layout_constraintTop_toTopOf="@+id/bPlusGroup" />
+
+    <android.widget.Button
+        android:id="@+id/bPlusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="B+"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/bMinusGroup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aMinusGroup"
+        app:layout_constraintTop_toTopOf="@+id/aMinusGroup" />
+
+    <android.widget.Button
+        android:id="@+id/aPlusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="A+"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/aMinusGroup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseTitle" />
+
+    <android.widget.Button
+        android:id="@+id/abPlusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="AB+"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/abMinusGroup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aPlusGroup" />
+
+    <android.widget.Button
+        android:id="@+id/oMinusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="O-"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/oPlusGroup"
+        app:layout_constraintTop_toTopOf="@+id/oPlusGroup" />
+
+    <android.widget.Button
+        android:id="@+id/oPlusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="O+"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/oMinusGroup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/abMinusGroup"
+        app:layout_constraintTop_toTopOf="@+id/abMinusGroup" />
+
+    <android.widget.Button
+        android:id="@+id/abMinusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="AB-"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/oPlusGroup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/abPlusGroup"
+        app:layout_constraintTop_toTopOf="@+id/abPlusGroup" />
+
+    <android.widget.Button
+        android:id="@+id/aMinusGroup"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/primary_color_round_button_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="A-"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/bPlusGroup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPlusGroup"
+        app:layout_constraintTop_toTopOf="@+id/aPlusGroup" />
+
+
+    <Switch
+        android:id="@+id/plasmaSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="Plasma"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/chooseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginLeft="@dimen/_24sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Choose Blood Group"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plasmaSwitch" />
+
+    <TextView
+        android:id="@+id/timeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Time"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/pickTimeEdt"
+        app:layout_constraintTop_toTopOf="@+id/dateTxt" />
+
+    <TextView
+        android:id="@+id/dateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Pick Date"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/chooseTitle"
+        app:layout_constraintTop_toBottomOf="@+id/abPlusGroup" />
+
+    <TextView
+        android:id="@+id/locationTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Select Location"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/dateTxt"
+        app:layout_constraintTop_toBottomOf="@+id/pickDateEdt" />
+
+    <CheckBox
+        android:id="@+id/expensesCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Transportation Expenses"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintStart_toStartOf="@+id/setLocationEdt"
+        app:layout_constraintTop_toBottomOf="@+id/setLocationEdt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

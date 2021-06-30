@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <TextView
+        android:id="@+id/agoTxt"
+        android:background="@drawable/donation_history_status__background_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:paddingRight="@dimen/_19sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="Donated Blood    "
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/monthTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_31sdp"
+        android:layout_marginLeft="@dimen/_31sdp"
+        android:layout_marginTop="16dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Dec"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agoTxt" />
+
+
+    <TextView
+        android:id="@+id/donationTimeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="11.00 am"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_11sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/donationDateTxt"
+        app:layout_constraintStart_toStartOf="@+id/donationDateTxt"
+        app:layout_constraintTop_toBottomOf="@+id/donationDateTxt" />
+
+    <TextView
+        android:id="@+id/donationDateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:includeFontPadding="false"
+        android:text="7"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_30sdp"
+        app:layout_constraintEnd_toEndOf="@+id/monthTxt"
+        app:layout_constraintStart_toStartOf="@+id/monthTxt"
+        app:layout_constraintTop_toBottomOf="@+id/monthTxt" />
+
+
+    <TextView
+        android:id="@+id/addressSeekerTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Shahabag,Dhaka"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@+id/hospitalLocationTxt"
+        app:layout_constraintStart_toStartOf="@+id/hospitalLocationTxt"
+        app:layout_constraintTop_toBottomOf="@+id/hospitalLocationTxt" />
+
+    <TextView
+        android:id="@+id/phnSeekerTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="01856245922469"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="@+id/seekerNameTxt"
+        app:layout_constraintStart_toStartOf="@+id/seekerNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/seekerNameTxt" />
+
+    <TextView
+        android:id="@+id/hospitalLocationTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Dhaka Medical College"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/barrier12"
+        app:layout_constraintTop_toTopOf="@+id/monthTxt" />
+
+    <TextView
+        android:id="@+id/seekerNameTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Nayeem Islam"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_7sdp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toStartOf="@+id/bloodGroupBoldTxt"
+        app:layout_constraintStart_toEndOf="@+id/seekerProfileImage"
+        app:layout_constraintTop_toTopOf="@+id/seekerProfileImage" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/seekerProfileImage"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/seeker_profile_image"
+        app:layout_constraintStart_toStartOf="@+id/addressSeekerTxt"
+        app:layout_constraintTop_toBottomOf="@+id/addressSeekerTxt" />
+
+    <TextView
+        android:id="@+id/bloodGroupBoldTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:includeFontPadding="false"
+        android:text="A+"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_26sdp"
+        app:layout_constraintEnd_toEndOf="@+id/addressSeekerTxt"
+        app:layout_constraintTop_toBottomOf="@+id/addressSeekerTxt" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="monthTxt,donationTimeTxt,donationDateTxt"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="donationTimeTxt,seekerProfileImage,bloodGroupBoldTxt,phnSeekerTxt"
+        tools:layout_editor_absoluteY="731dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

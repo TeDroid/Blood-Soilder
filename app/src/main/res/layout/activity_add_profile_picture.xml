@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline32" />
 
     <android.widget.Button
-        android:id="@+id/doneBtn"
+        android:id="@+id/setBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_24sdp"
@@ -42,7 +42,7 @@
         android:paddingTop="@dimen/_7sdp"
         android:paddingRight="@dimen/_30sdp"
         android:paddingBottom="@dimen/_7sdp"
-        android:text="Done"
+        android:text="Set"
         android:textAllCaps="false"
         android:textColor="@drawable/white_button_text_color"
         android:textSize="@dimen/_10sdp"

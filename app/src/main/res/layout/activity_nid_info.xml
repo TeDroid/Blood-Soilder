@@ -20,6 +20,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/_12sdp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="@+id/nidNumberEdt"
         app:layout_constraintStart_toStartOf="@+id/nidNumberEdt"
         app:layout_constraintTop_toTopOf="@+id/guideline31" />
@@ -47,6 +48,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline34" />
 
+    <android.widget.Button
+        android:id="@+id/takePhotoBtn"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="@dimen/_85sdp"
+        android:background="@drawable/outlined_corner_rounded_button_shape"
+        android:drawableTop="@drawable/ic_photo_camera"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Take Photo"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_15sdp"
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <android.widget.Button
+        android:id="@+id/galleryBtn"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="@dimen/_85sdp"
+        android:background="@drawable/outlined_corner_rounded_button_shape"
+        android:drawableTop="@drawable/ic_gallery_icon"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text=" Gallery  "
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
     <EditText
         android:id="@+id/nidNumberEdt"
         android:layout_width="0dp"
@@ -59,11 +98,11 @@
         android:ems="10"
         android:fontFamily="@font/montserrat_alternates"
         android:gravity="left"
-        android:textCursorDrawable="@null"
         android:hint="NID number"
         android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/pale_white"
+        android:textCursorDrawable="@null"
         app:layout_constraintBottom_toTopOf="@+id/guideline31"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -194,11 +233,25 @@
         app:layout_constraintGuide_percent="0.57" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.86" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline35"
@@ -206,6 +259,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.59" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.41" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

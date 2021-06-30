@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+
+
+    <ImageView
+        android:id="@+id/userRatingIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingCountText"
+        app:layout_constraintStart_toEndOf="@+id/ratingCountText"
+        app:layout_constraintTop_toTopOf="@+id/ratingCountText"
+        app:srcCompat="@drawable/ic_rating_user_icon"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/startIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/addressDonorTxt"
+        app:layout_constraintTop_toBottomOf="@+id/addressDonorTxt"
+        app:srcCompat="@drawable/ic_star_small_rating"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/ratingCountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="4.2"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/startIcon"
+        app:layout_constraintTop_toTopOf="@+id/startIcon" />
+
+    <TextView
+        android:id="@+id/ratingUserText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="14"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingCountText"
+        app:layout_constraintStart_toEndOf="@+id/userRatingIcon"
+        app:layout_constraintTop_toTopOf="@+id/ratingCountText" />
+
+    <TextView
+        android:id="@+id/addressDonorTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Town hall, Mohammadpur"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="@+id/donornameTxt"
+        app:layout_constraintStart_toStartOf="@+id/donornameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/donornameTxt" />
+
+    <TextView
+        android:id="@+id/donornameTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Nayeem Islam"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_7sdp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="@+id/hospitalNameTxt"
+        app:layout_constraintStart_toEndOf="@+id/donorProfileHistoryImage"
+        app:layout_constraintTop_toTopOf="@+id/donorProfileHistoryImage" />
+
+    <TextView
+        android:id="@+id/donorTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="Donor"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="normal|bold"
+        app:layout_constraintStart_toStartOf="@+id/hospitalLocationText"
+        app:layout_constraintTop_toBottomOf="@+id/bloodGroupHistoryTxt" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/donorProfileHistoryImage"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/seeker_profile_image"
+        app:layout_constraintStart_toStartOf="@+id/donorTitleTxt"
+        app:layout_constraintTop_toBottomOf="@+id/donorTitleTxt" />
+
+    <TextView
+        android:id="@+id/bloodGroupHistoryTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:includeFontPadding="false"
+        android:text="A+"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_26sdp"
+        app:layout_constraintEnd_toEndOf="@+id/hospitalNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/hospitalLocationText" />
+
+    <TextView
+        android:id="@+id/hospitalNameTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        android:layout_marginRight="@dimen/_24sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Dhaka Medical College"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/hospitalLocationText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier7"
+        app:layout_constraintTop_toBottomOf="@+id/agoText"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/hospitalLocationText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Shahabag,Dhaka"
+        android:textColor="@color/ash_black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@+id/hospitalNameTxt"
+        app:layout_constraintStart_toStartOf="@+id/hospitalNameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/hospitalNameTxt" />
+
+    <TextView
+        android:id="@+id/donationTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="11.00 am"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_11sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingCountText"
+        app:layout_constraintEnd_toEndOf="@+id/donationDateText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/donationDateText"
+        app:layout_constraintTop_toBottomOf="@+id/donationDateText" />
+
+    <TextView
+        android:id="@+id/monthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Dec"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/donationDateText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hospitalNameTxt"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/donationDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:includeFontPadding="false"
+        android:text="7"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_30sdp"
+        app:layout_constraintBottom_toTopOf="@+id/donationTimeText"
+        app:layout_constraintEnd_toEndOf="@+id/monthText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/monthText"
+        app:layout_constraintTop_toBottomOf="@+id/monthText" />
+
+    <TextView
+        android:id="@+id/agoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/requested_history_status__background_shape"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingRight="@dimen/_19sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:text="Requested Blood  "
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="monthText,donationDateText,donationTimeText"
+        tools:layout_editor_absoluteX="411dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
