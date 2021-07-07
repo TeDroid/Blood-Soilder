@@ -4,4 +4,6 @@
     <string name="activityFragment">Activity</string>
     <string name="profileFragment">My Profile</string>
     <string name="resend"><u>Resend</u></string>
+
+    <string name="MAPS_API_KEY">AIzaSyCq051G71QAP7BiQf3gJhUrorljGyc4lNc</string>
 </resources>

@@ -9,7 +9,7 @@
 
 
     <android.widget.Button
-        android:id="@+id/sendBtn"
+        android:id="@+id/verifyBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoSizeTextType="uniform"
@@ -26,8 +26,8 @@
         android:textSize="@dimen/_10sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline24"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toEndOf="@+id/verifyAccountOTPEdt"
+        app:layout_constraintStart_toStartOf="@+id/verifyAccountOTPEdt"
         app:layout_constraintTop_toTopOf="@+id/guideline25" />
 
     <TextView
@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
     <TextView
-        android:id="@+id/tutoText2"
+        android:id="@+id/verifyAccountOTPTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_26sdp"
@@ -99,9 +99,11 @@
         android:textSize="@dimen/_11sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline25"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toEndOf="@+id/verifyAccountOTPEdt"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/statusCodeTxt"
-        app:layout_constraintTop_toTopOf="@+id/guideline23" />
+        app:layout_constraintTop_toTopOf="@+id/guideline23"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/statusCodeTxt"
@@ -115,10 +117,9 @@
         android:textSize="@dimen/_11sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline25"
-        app:layout_constraintEnd_toStartOf="@+id/resendTextBtn"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
-        app:layout_constraintTop_toTopOf="@+id/guideline23" />
+        app:layout_constraintStart_toStartOf="@+id/verifyAccountOTPEdt"
+        app:layout_constraintTop_toTopOf="@+id/guideline23"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/upperFrameImage"
@@ -186,7 +187,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/verifyAccountOTPEdt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_35sdp"

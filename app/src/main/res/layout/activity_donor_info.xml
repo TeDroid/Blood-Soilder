@@ -309,7 +309,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginLeft="@dimen/_12sdp"
         android:src="@drawable/ic_donor_logo"
         app:layout_constraintBottom_toTopOf="@+id/guideline32"
         app:layout_constraintEnd_toEndOf="parent"
@@ -317,33 +316,40 @@
         app:layout_constraintStart_toEndOf="@+id/seekerLogo"
         app:layout_constraintTop_toTopOf="@+id/guideline28" />
 
-    <RadioButton
-        android:id="@+id/seekerRadioButton"
+    <RadioGroup
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_6sdp"
-        android:buttonTint="@color/white"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="Seeker"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/seekerLogo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="@+id/seekerLogo"
-        app:layout_constraintTop_toTopOf="@+id/guideline32" />
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline32">
 
-    <RadioButton
-        android:id="@+id/donorRadioButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_6sdp"
-        android:buttonTint="@color/white"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="Donor"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/donorLogo"
-        app:layout_constraintStart_toStartOf="@+id/donorLogo"
-        app:layout_constraintTop_toTopOf="@+id/guideline32" />
+
+        <RadioButton
+            android:id="@+id/seekerRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:buttonTint="@color/white"
+            android:fontFamily="@font/montserrat_alternates_bold"
+            android:text="Seeker"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/donorRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:buttonTint="@color/white"
+            android:fontFamily="@font/montserrat_alternates_bold"
+            android:text="Donor"
+
+            android:textColor="@color/white" />
+
+    </RadioGroup>
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
