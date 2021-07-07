@@ -1,6 +1,7 @@
 package com.mkrlabs.bloodsoilder.ui.homemap;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.location.Location;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -29,6 +31,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.mkrlabs.bloodsoilder.R;
 import com.mkrlabs.bloodsoilder.Utils.Display;
 
@@ -47,6 +50,8 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
 
     private FusedLocationProviderClient fusedLocationProviderClient;
 
+    private ImageButton homeMapBloodSearch;
+
     public HomeMapFragment() {
     }
 
@@ -55,13 +60,35 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_map, container, false);
+        init(view);
         return view;
+    }
+
+    private void init(View view) {
+        homeMapBloodSearch = view .findViewById(R.id.homeMapBloodSearch);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getLocationPermission();
+
+
+        homeMapBloodSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSearchDialog();
+            }
+        });
+    }
+
+    private void openSearchDialog() {
+        BottomSheetDialog dialog = new BottomSheetDialog(getContext());
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_find_donor_search_top,null);
+        dialog.setContentView(view);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
     }
 
 
