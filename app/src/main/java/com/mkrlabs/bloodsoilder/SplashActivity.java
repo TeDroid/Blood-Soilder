@@ -9,6 +9,7 @@ import android.os.Looper;
 
 import com.mkrlabs.bloodsoilder.Utils.DisplayUtils;
 import com.mkrlabs.bloodsoilder.ui.HomeActivity;
+import com.mkrlabs.bloodsoilder.ui.account.CreateAccountActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                finish();
             }
         },2500);
     }

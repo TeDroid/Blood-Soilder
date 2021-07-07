@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "575578049554",
+    "project_id": "blood-soldier",
+    "storage_bucket": "blood-soldier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575578049554:android:8f32d533f646e8925c5ccb",
+        "android_client_info": {
+          "package_name": "com.mkrlabs.bloodsoilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575578049554-pb0v0jhjivoe84kh5hcar54ffsgiqn80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP0_pZrSHNOP1EzIq19lbGP8_JV6IrCzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575578049554-pb0v0jhjivoe84kh5hcar54ffsgiqn80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

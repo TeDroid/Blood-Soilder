@@ -26,8 +26,8 @@
         android:textSize="@dimen/_10sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline24"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toEndOf="@+id/createAccountPhoneEdt"
+        app:layout_constraintStart_toStartOf="@+id/createAccountPhoneEdt"
         app:layout_constraintTop_toTopOf="@+id/guideline23" />
 
     <TextView
@@ -153,7 +153,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/createAccountPhoneEdt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_42sdp"
