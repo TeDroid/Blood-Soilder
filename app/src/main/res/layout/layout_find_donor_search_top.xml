@@ -45,6 +45,7 @@
             android:clickable="true"
             >
             <TextView
+                android:id="@+id/findDonarDateTV"
                 android:layout_width="@dimen/_150sdp"
                 android:layout_height="wrap_content"
                 android:text="select  date"
@@ -114,6 +115,7 @@
             >
 
             <TextView
+                android:id="@+id/selectTimeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"

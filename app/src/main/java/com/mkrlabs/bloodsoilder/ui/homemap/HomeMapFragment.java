@@ -1,7 +1,9 @@
 package com.mkrlabs.bloodsoilder.ui.homemap;
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.location.Location;
@@ -17,7 +19,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -32,10 +37,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.card.MaterialCardView;
 import com.mkrlabs.bloodsoilder.R;
 import com.mkrlabs.bloodsoilder.Utils.Display;
+import com.mkrlabs.bloodsoilder.ui.account.CreateAccountActivity;
 
 import java.security.Permission;
+import java.util.Calendar;
 
 
 public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
@@ -51,6 +59,9 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
     private FusedLocationProviderClient fusedLocationProviderClient;
 
     private ImageButton homeMapBloodSearch;
+    private int mYear, mMonth, mDay, mHour, mMinute;
+
+    private TextView findDonarDateTV,selectTimeTV;
 
     public HomeMapFragment() {
     }
@@ -65,7 +76,8 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void init(View view) {
-        homeMapBloodSearch = view .findViewById(R.id.homeMapBloodSearch);
+        homeMapBloodSearch = view.findViewById(R.id.homeMapBloodSearch);
+
     }
 
     @Override
@@ -84,11 +96,68 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
 
     private void openSearchDialog() {
         BottomSheetDialog dialog = new BottomSheetDialog(getContext());
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_find_donor_search_top,null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_find_donor_search_top, null);
         dialog.setContentView(view);
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
+
+        findDonarDateTV = view.findViewById(R.id.findDonarDateTV);
+        selectTimeTV = view.findViewById(R.id.selectTimeTV);
+
+        MaterialCardView selectDateCV = view.findViewById(R.id.pickDateCV);
+        MaterialCardView selectTimeCV = view.findViewById(R.id.pickTimeCV);
+        MaterialCardView selectLocationCV = view.findViewById(R.id.setLocationCV);
+
+        selectDateCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpDateWindow();
+            }
+        });
+        selectTimeCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpTimeWindow();
+            }
+        });
+
         dialog.show();
+    }
+
+    private void setUpTimeWindow() {
+        Calendar c = Calendar.getInstance();
+        mHour = c.get(Calendar.HOUR_OF_DAY);
+        mMinute = c.get(Calendar.MINUTE);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(),
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,
+                                          int minute) {
+
+                        selectTimeTV.setText(hourOfDay + ":" + minute);
+                    }
+                }, mHour, mMinute, false);
+        timePickerDialog.show();
+
+    }
+
+    private void setUpDateWindow() {
+        Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+                findDonarDateTV.setText(dayOfMonth + "/" + (month+1) + "/" + year);
+            }
+        }, mYear, mMonth, mDay);
+        datePickerDialog.show();
     }
 
 
@@ -127,23 +196,23 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
         Log.d(TAG, "getDeviceCurrentLocation ");
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getContext());
         try {
-            Task<Location> task =  fusedLocationProviderClient.getLastLocation();
+            Task<Location> task = fusedLocationProviderClient.getLastLocation();
 
             task.addOnCompleteListener(new OnCompleteListener<Location>() {
                 @Override
                 public void onComplete(@NonNull Task<Location> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         Location userLocation = task.getResult();
 
-                        if (userLocation!=null){
+                        if (userLocation != null) {
                             LatLng latLng = new LatLng(userLocation.getLatitude(), userLocation.getLongitude());
                             moveCameraToLocation(latLng, DEFAULT_ZOOM);
 
-                        }else {
-                            Display.infoToast(getContext(),"Unable to find current location");
+                        } else {
+                            Display.infoToast(getContext(), "Unable to find current location");
                         }
-                    }else {
-                        Display.errorToast(getContext(),"Unable to find current location");
+                    } else {
+                        Display.errorToast(getContext(), "Unable to find current location");
                     }
                 }
             });
