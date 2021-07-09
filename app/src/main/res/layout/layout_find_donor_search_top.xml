@@ -23,75 +23,118 @@
             android:fontFamily="@font/montserrat_alternates"
             android:text="Transportation Expenses"
             android:textColor="@color/primaryColor"
-            app:layout_constraintStart_toStartOf="@+id/setLocationEdt"
-            app:layout_constraintTop_toBottomOf="@+id/setLocationEdt" />
+            app:layout_constraintStart_toStartOf="@+id/setLocationCV"
+            app:layout_constraintTop_toBottomOf="@+id/setLocationCV" />
 
-        <EditText
-            android:id="@+id/pickDateEdt"
-            android:layout_width="0dp"
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pickDateCV"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginEnd="@dimen/_6sdp"
-            android:layout_marginRight="@dimen/_6sdp"
-            android:backgroundTint="@color/primaryColor"
-            android:ems="10"
-            android:fontFamily="@font/montserrat_alternates"
-            android:gravity="center"
-            android:hint="Enter OTP code"
-            android:inputType="time"
-            android:textColor="@color/primaryColor"
-            android:textColorHint="@color/ash_black"
-            app:layout_constraintEnd_toStartOf="@+id/pickTimeEdt"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:elevation="@dimen/_7sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@+id/pickTimeCV"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateTxt" />
+            app:layout_constraintTop_toBottomOf="@+id/dateTxt"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            >
+            <TextView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:text="select  date"
+                android:textSize="@dimen/_16sdp"
+                android:textAlignment="center"
+                android:padding="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_alternates"
+                android:paddingStart="@dimen/_10sdp"
+                android:drawableTint="@color/secondaryColor"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawableStart="@drawable/ic_baseline_calendar_today_24"/>
 
-        <EditText
-            android:id="@+id/setLocationEdt"
-            android:layout_width="0dp"
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/setLocationCV"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_24sdp"
-            android:layout_marginLeft="@dimen/_24sdp"
-            android:layout_marginTop="@dimen/_18sdp"
-            android:layout_marginEnd="@dimen/_24sdp"
-            android:layout_marginRight="@dimen/_24sdp"
-            android:backgroundTint="@color/primaryColor"
-            android:ems="10"
-            android:fontFamily="@font/montserrat_alternates"
-            android:gravity="center"
-            android:hint="Enter OTP code"
-            android:inputType="text"
-            android:textColor="@color/primaryColor"
-            android:textColorHint="@color/ash_black"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:elevation="@dimen/_7sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/locationTxt" />
+            app:layout_constraintTop_toBottomOf="@+id/locationTxt"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            >
+            <TextView
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="wrap_content"
+                android:text="set a location"
+                android:textSize="@dimen/_16sdp"
+                android:textAlignment="center"
+                android:padding="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat_alternates"
+                android:paddingStart="@dimen/_10sdp"
+                android:drawableTint="@color/secondaryColor"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawableStart="@drawable/ic_baseline_my_location_24"/>
 
-        <EditText
-            android:id="@+id/pickTimeEdt"
-            android:layout_width="0dp"
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pickTimeCV"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_6sdp"
-            android:layout_marginLeft="@dimen/_6sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:backgroundTint="@color/primaryColor"
-            android:ems="10"
-            android:fontFamily="@font/montserrat_alternates"
-            android:gravity="center"
-            android:hint="Enter OTP code"
-            android:inputType="date"
-            android:textColor="@color/primaryColor"
-            android:textColorHint="@color/ash_black"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="@dimen/_7sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/pickDateEdt"
-            app:layout_constraintTop_toTopOf="@+id/pickDateEdt" />
+            app:layout_constraintStart_toEndOf="@+id/pickDateCV"
+            app:layout_constraintTop_toBottomOf="@+id/timeTxt"
+            android:background="?attr/selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            >
 
-        <Switch
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:drawableTint="@color/secondaryColor"
+                android:fontFamily="@font/montserrat_alternates"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="select time"
+                android:textAlignment="center"
+                android:textSize="@dimen/_16sdp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/plasmaSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,7 +168,7 @@
             android:text="Time"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/pickTimeEdt"
+            app:layout_constraintStart_toStartOf="@+id/pickTimeCV"
             app:layout_constraintTop_toTopOf="@+id/dateTxt" />
 
         <TextView
@@ -150,7 +193,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/dateTxt"
-            app:layout_constraintTop_toBottomOf="@+id/pickDateEdt" />
+            app:layout_constraintTop_toBottomOf="@+id/pickDateCV" />
 
         <android.widget.Button
             android:id="@+id/findDonorBtn"
@@ -172,18 +215,18 @@
             android:textSize="@dimen/_10sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/setLocationEdt"
-            app:layout_constraintStart_toStartOf="@+id/setLocationEdt"
+            app:layout_constraintEnd_toEndOf="@+id/setLocationCV"
+            app:layout_constraintStart_toStartOf="@+id/setLocationCV"
             app:layout_constraintTop_toBottomOf="@+id/expensesCheckBox" />
 
         <android.widget.Button
             android:id="@+id/bMinusGroup"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="B+"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -195,10 +238,10 @@
             android:id="@+id/bPlusGroup"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="B+"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/bMinusGroup"
@@ -212,10 +255,10 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="A+"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/aMinusGroup"
@@ -228,10 +271,10 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="AB+"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/abMinusGroup"
@@ -243,10 +286,10 @@
             android:id="@+id/oMinusGroup"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="O-"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -258,10 +301,10 @@
             android:id="@+id/oPlusGroup"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="O+"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/oMinusGroup"
@@ -273,10 +316,10 @@
             android:id="@+id/abMinusGroup"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="AB-"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/oPlusGroup"
@@ -288,16 +331,21 @@
             android:id="@+id/aMinusGroup"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="@drawable/primary_color_round_button_shape"
+            android:background="@drawable/blood_group_selection_button"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="A-"
-            android:textColor="@drawable/primary_color_button_text_color"
+            android:textColor="@drawable/blood_group_selection_text_color"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/bPlusGroup"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/aPlusGroup"
             app:layout_constraintTop_toTopOf="@+id/aPlusGroup" />
+
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
