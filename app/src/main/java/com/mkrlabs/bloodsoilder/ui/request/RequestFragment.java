@@ -24,6 +24,8 @@ public class RequestFragment extends Fragment {
 
     public RequestFragment() {
         // Required empty public constructor
+
+        // new changes applied
     }
 
 
