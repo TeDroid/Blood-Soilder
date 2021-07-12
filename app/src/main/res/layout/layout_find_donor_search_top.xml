@@ -31,32 +31,32 @@
             android:id="@+id/pickDateCV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
             android:elevation="@dimen/_7sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
             app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toStartOf="@+id/pickTimeCV"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateTxt"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/dateTxt">
+
             <TextView
                 android:id="@+id/findDonarDateTV"
                 android:layout_width="@dimen/_150sdp"
                 android:layout_height="wrap_content"
-                android:text="select  date"
-                android:textSize="@dimen/_16sdp"
-                android:textAlignment="center"
-                android:padding="@dimen/_5sdp"
-                android:fontFamily="@font/montserrat_alternates"
-                android:paddingStart="@dimen/_10sdp"
-                android:drawableTint="@color/secondaryColor"
+                android:drawableStart="@drawable/ic_baseline_calendar_today_24"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
-                android:drawableStart="@drawable/ic_baseline_calendar_today_24"/>
+                android:drawableTint="@color/secondaryColor"
+                android:fontFamily="@font/montserrat_alternates"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="select  date"
+                android:textAlignment="center"
+                android:textSize="@dimen/_16sdp" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -65,34 +65,31 @@
             android:id="@+id/setLocationCV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/_15sdp"
-            android:elevation="@dimen/_7sdp"
-            app:cardMaxElevation="@dimen/_10sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/locationTxt"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_6sdp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            >
+            android:elevation="@dimen/_7sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardMaxElevation="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationTxt">
+
             <TextView
                 android:layout_width="@dimen/_250sdp"
                 android:layout_height="wrap_content"
-                android:text="set a location"
-                android:textSize="@dimen/_16sdp"
-                android:textAlignment="center"
-                android:padding="@dimen/_5sdp"
-                android:fontFamily="@font/montserrat_alternates"
-                android:paddingStart="@dimen/_10sdp"
-                android:drawableTint="@color/secondaryColor"
+                android:drawableStart="@drawable/ic_baseline_my_location_24"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
-                android:drawableStart="@drawable/ic_baseline_my_location_24"/>
+                android:drawableTint="@color/secondaryColor"
+                android:fontFamily="@font/montserrat_alternates"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="set a location"
+                android:textAlignment="center"
+                android:textSize="@dimen/_16sdp" />
 
         </com.google.android.material.card.MaterialCardView>
-
-
-
 
 
         <com.google.android.material.card.MaterialCardView
@@ -100,19 +97,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
             android:elevation="@dimen/_7sdp"
+            android:focusable="true"
             app:cardCornerRadius="@dimen/_15sdp"
             app:cardMaxElevation="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/pickDateCV"
-            app:layout_constraintTop_toBottomOf="@+id/timeTxt"
-            android:background="?attr/selectableItemBackground"
-            android:focusable="true"
-            android:clickable="true"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/timeTxt">
 
             <TextView
                 android:id="@+id/selectTimeTV"
@@ -142,18 +138,159 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/chooseTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_24sdp"
-            android:layout_marginLeft="@dimen/_24sdp"
-            android:fontFamily="@font/montserrat_alternates"
-            android:text="Choose Blood Group"
-            android:textSize="20dp"
-            android:textStyle="bold"
+        <LinearLayout
+            android:id="@+id/bloodGroupSelectorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plasmaSwitch" />
+            app:layout_constraintTop_toBottomOf="@+id/plasmaSwitch">
+
+
+            <TextView
+
+                android:id="@+id/bloodTuto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="Choose Your Blood Group"
+                android:textColor="@color/ash_black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/first_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="A+"
+                    android:textColor="@drawable/white_radio_text_color" />
+
+                <RadioButton
+                    android:id="@+id/type2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="A-"
+                    android:textColor="@drawable/white_radio_text_color"
+
+                    />
+
+                <RadioButton
+                    android:id="@+id/type3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="B+"
+                    android:textColor="@drawable/white_radio_text_color" />
+
+                <RadioButton
+                    android:id="@+id/type4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="B-"
+                    android:textColor="@drawable/white_radio_text_color"
+
+                    />
+
+
+            </RadioGroup>
+
+
+            <RadioGroup
+                android:id="@+id/second_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/type5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="AB+"
+                    android:textColor="@drawable/white_radio_text_color" />
+
+                <RadioButton
+                    android:id="@+id/type6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="AB-"
+                    android:textColor="@drawable/white_radio_text_color"
+
+                    />
+
+                <RadioButton
+                    android:id="@+id/type7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="O+"
+                    android:textColor="@drawable/white_radio_text_color" />
+
+                <RadioButton
+                    android:id="@+id/type8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_radio_selector_layout"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/montserrat_alternates_bold"
+                    android:gravity="center"
+                    android:text="O-"
+                    android:textColor="@drawable/white_radio_text_color" />
+
+
+            </RadioGroup>
+
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/timeTxt"
@@ -170,13 +307,14 @@
             android:id="@+id/dateTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_alternates"
             android:text="Pick Date"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/chooseTitle"
-            app:layout_constraintTop_toBottomOf="@+id/abPlusGroup" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bloodGroupSelectorLayout" />
 
         <TextView
             android:id="@+id/locationTxt"
@@ -213,132 +351,6 @@
             app:layout_constraintEnd_toEndOf="@+id/setLocationCV"
             app:layout_constraintStart_toStartOf="@+id/setLocationCV"
             app:layout_constraintTop_toBottomOf="@+id/expensesCheckBox" />
-
-        <android.widget.Button
-            android:id="@+id/bMinusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="B+"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/bPlusGroup"
-            app:layout_constraintTop_toTopOf="@+id/bPlusGroup" />
-
-        <android.widget.Button
-            android:id="@+id/bPlusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="B+"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/bMinusGroup"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/aMinusGroup"
-            app:layout_constraintTop_toTopOf="@+id/aMinusGroup" />
-
-
-        <android.widget.Button
-            android:id="@+id/aPlusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="A+"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/aMinusGroup"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chooseTitle" />
-
-        <android.widget.Button
-            android:id="@+id/abPlusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="AB+"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/abMinusGroup"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/aPlusGroup" />
-
-        <android.widget.Button
-            android:id="@+id/oMinusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="O-"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/oPlusGroup"
-            app:layout_constraintTop_toTopOf="@+id/oPlusGroup" />
-
-        <android.widget.Button
-            android:id="@+id/oPlusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="O+"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/oMinusGroup"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/abMinusGroup"
-            app:layout_constraintTop_toTopOf="@+id/abMinusGroup" />
-
-        <android.widget.Button
-            android:id="@+id/abMinusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="AB-"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/oPlusGroup"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/abPlusGroup"
-            app:layout_constraintTop_toTopOf="@+id/abPlusGroup" />
-
-        <android.widget.Button
-            android:id="@+id/aMinusGroup"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:background="@drawable/blood_group_selection_button"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:text="A-"
-            android:textColor="@drawable/blood_group_selection_text_color"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/bPlusGroup"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/aPlusGroup"
-            app:layout_constraintTop_toTopOf="@+id/aPlusGroup" />
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
