@@ -22,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private BottomNavigationView homeBottomNavigation;
 
+    // backend branch upgrade
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
