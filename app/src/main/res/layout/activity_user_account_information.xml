@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".ui.account.userinformation.UserAccountInformation">
+
+
+    <ImageView
+        android:id="@+id/profilePicLogo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_profile_pic_logo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline29"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline28" />
+
+    <ImageView
+        android:id="@+id/plusIcon3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_plus_sign_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/profilePicLogo3"
+        app:layout_constraintEnd_toEndOf="@+id/profilePicLogo3" />
+
+    <android.widget.Button
+        android:id="@+id/profileNextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/white_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingTop="@dimen/_7sdp"
+        android:paddingRight="@dimen/_30sdp"
+        android:paddingBottom="@dimen/_7sdp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@drawable/white_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toEndOf="@+id/nidNumEdt" />
+
+    <EditText
+        android:id="@+id/nameEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginLeft="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        android:layout_marginRight="@dimen/_24sdp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="left"
+        android:hint="Full name"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/pale_white"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toTopOf="@+id/pinEdt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline30" />
+
+    <EditText
+        android:id="@+id/pinEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="left"
+        android:hint="Pin"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/pale_white"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toTopOf="@+id/confrmPinEdt"
+        app:layout_constraintEnd_toEndOf="@+id/nameEdt"
+        app:layout_constraintStart_toStartOf="@+id/nameEdt"
+        app:layout_constraintTop_toBottomOf="@+id/nameEdt" />
+
+    <EditText
+        android:id="@+id/confrmPinEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="left"
+        android:hint="Confirm Pin"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/pale_white"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toTopOf="@+id/nidNumEdt"
+        app:layout_constraintEnd_toEndOf="@+id/pinEdt"
+        app:layout_constraintStart_toStartOf="@+id/pinEdt"
+        app:layout_constraintTop_toBottomOf="@+id/pinEdt" />
+
+    <EditText
+        android:id="@+id/nidNumEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="left"
+        android:hint="NID Number"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/pale_white"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toTopOf="@+id/guideline34"
+        app:layout_constraintEnd_toEndOf="@+id/confrmPinEdt"
+        app:layout_constraintStart_toStartOf="@+id/confrmPinEdt"
+        app:layout_constraintTop_toBottomOf="@+id/confrmPinEdt" />
+
+    <TextView
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginLeft="@dimen/_18sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="Account Information"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline26" />
+
+    <ImageView
+        android:id="@+id/upperFrameImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_top_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bottomFrameImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:alpha=".2"
+        android:src="@drawable/ic_lower_frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/bubble1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:alpha=".5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline26"
+        app:srcCompat="@drawable/bubble" />
+
+    <ImageView
+        android:id="@+id/bubble2"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_42sdp"
+        android:layout_marginRight="@dimen/_42sdp"
+        android:alpha=".5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline29"
+        app:srcCompat="@drawable/bubble" />
+
+    <ImageView
+        android:id="@+id/bubble3"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:alpha=".5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline29"
+        app:layout_constraintEnd_toStartOf="@+id/profilePicLogo3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline28"
+        app:srcCompat="@drawable/bubble" />
+
+
+    <android.widget.Button
+        android:id="@+id/takePhotoBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/outlined_corner_rounded_button_shape"
+        android:drawableTop="@drawable/ic_front_nid"
+        android:fontFamily="@font/montserrat_alternates"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_15sdp"
+        android:text="Select the front picture of your nid"
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="@+id/nameEdt"
+        app:layout_constraintStart_toStartOf="@+id/nameEdt"
+        app:layout_constraintTop_toTopOf="@+id/guideline34" />
+
+    <android.widget.Button
+        android:id="@+id/takePhotoBtn2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outlined_corner_rounded_button_shape"
+        android:drawableTop="@drawable/ic_back_nid"
+        android:fontFamily="@font/montserrat_alternates"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_15sdp"
+        android:text="Select the back picture of your nid"
+        android:textAllCaps="false"
+        android:textColor="@drawable/primary_color_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintEnd_toEndOf="@+id/nameEdt"
+        app:layout_constraintStart_toStartOf="@+id/nameEdt"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
