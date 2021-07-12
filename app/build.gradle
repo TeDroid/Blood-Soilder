@@ -46,6 +46,9 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'com.iceteck.silicompressorr:silicompressor:2.1'
 
 }
 
