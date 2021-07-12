@@ -112,6 +112,7 @@ public class UserAccountInformation extends AppCompatActivity {
 
             AccountCreation.name=name;
             AccountCreation.pin=pin;
+            AccountCreation.nid=nid_no;
             AccountCreation.frontImage=frontImage;
             AccountCreation.backImage=backImage;
 

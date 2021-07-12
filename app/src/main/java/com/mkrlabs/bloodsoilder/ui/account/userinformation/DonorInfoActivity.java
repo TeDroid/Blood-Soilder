@@ -27,6 +27,8 @@ import com.mkrlabs.bloodsoilder.model.User;
 import com.mkrlabs.bloodsoilder.ui.HomeActivity;
 import com.mkrlabs.bloodsoilder.ui.account.VerifyAccountActivity;
 
+import java.util.Calendar;
+
 public class DonorInfoActivity extends AppCompatActivity implements AccountContract.View {
     RadioGroup userTypeRadioGroup;
     RadioButton radioButton;
@@ -42,13 +44,16 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
     private int User_Type ;
     private String BLOOD_GROUP = null;
 
+    private AccountPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor_info);
         init();
+
         mAuth = FirebaseAuth.getInstance();
+        presenter = new AccountPresenter(this);
         mFirstGroup.clearCheck();
         mSecondGroup.clearCheck();
         doneBtn.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +147,7 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
         user.append("Name "+ AccountCreation.name+"\n");
         user.append("Pin "+ AccountCreation.pin+"\n");
         user.append("Phone "+ AccountCreation.phone+"\n");
+        user.append("Nid "+ AccountCreation.nid+"\n");
         user.append("Front Image "+ AccountCreation.frontImage.getPath()+"\n");
         user.append("back Image "+ AccountCreation.backImage.getPath()+"\n");
         user.append("User Type "+ User_Type+"\n");
@@ -158,8 +164,13 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
     }
 
     private void createUserAccount() {
+        long timestamp = Calendar.getInstance().getTime().getTime();
 //    public User(String name, String phone, int nid, int pin, int user_type, boolean status, String uid, String blood_group, long account_created_at) {
-        User user = new User();
+        User user = new User(AccountCreation.name,AccountCreation.phone,AccountCreation.nid,AccountCreation.pin
+        ,User_Type,true,AccountCreation.uid,BLOOD_GROUP,timestamp);
+
+
+
     }
 
     private void init() {
