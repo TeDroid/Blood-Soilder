@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline34" />
 
     <android.widget.Button
-        android:id="@+id/takePhotoBtn"
+        android:id="@+id/nidFrontImage"
         android:layout_width="@dimen/_85sdp"
         android:layout_height="@dimen/_85sdp"
         android:background="@drawable/outlined_corner_rounded_button_shape"

@@ -8,44 +8,6 @@
     tools:context=".ui.account.userinformation.UserAccountInformation">
 
 
-    <ImageView
-        android:id="@+id/profilePicLogo3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_profile_pic_logo"
-        app:layout_constraintBottom_toTopOf="@+id/guideline29"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline28" />
-
-    <ImageView
-        android:id="@+id/plusIcon3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_plus_sign_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/profilePicLogo3"
-        app:layout_constraintEnd_toEndOf="@+id/profilePicLogo3" />
-
-    <android.widget.Button
-        android:id="@+id/profileNextBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
-        android:background="@drawable/white_button_shape"
-        android:fontFamily="@font/montserrat_alternates"
-        android:minHeight="0dp"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingTop="@dimen/_7sdp"
-        android:paddingRight="@dimen/_30sdp"
-        android:paddingBottom="@dimen/_7sdp"
-        android:text="Next"
-        android:textAllCaps="false"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="@dimen/_10sdp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline35"
-        app:layout_constraintEnd_toEndOf="@+id/nidNumEdt" />
-
     <EditText
         android:id="@+id/nameEdt"
         android:layout_width="0dp"
@@ -122,21 +84,23 @@
         app:layout_constraintStart_toStartOf="@+id/confrmPinEdt"
         app:layout_constraintTop_toBottomOf="@+id/confrmPinEdt" />
 
-    <TextView
-
-        android:layout_width="0dp"
+    <ImageView
+        android:id="@+id/profilePicLogo3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_18sdp"
-        android:layout_marginLeft="@dimen/_18sdp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="Account Information"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_18sdp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        android:src="@drawable/ic_add_profile_pic_logo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline29"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline26" />
+        app:layout_constraintTop_toTopOf="@+id/guideline28" />
+
+    <ImageView
+        android:id="@+id/plusIcon3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_plus_sign_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/profilePicLogo3"
+        app:layout_constraintEnd_toEndOf="@+id/profilePicLogo3" />
 
     <ImageView
         android:id="@+id/upperFrameImage"
@@ -191,46 +155,71 @@
         app:layout_constraintTop_toTopOf="@+id/guideline28"
         app:srcCompat="@drawable/bubble" />
 
-
-    <android.widget.Button
-        android:id="@+id/takePhotoBtn"
+    <ImageView
+        android:id="@+id/nidFrontImage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/outlined_corner_rounded_button_shape"
-        android:drawableTop="@drawable/ic_front_nid"
-        android:fontFamily="@font/montserrat_alternates"
         android:paddingTop="@dimen/_15sdp"
         android:paddingBottom="@dimen/_15sdp"
-        android:text="Select the front picture of your nid"
-        android:textAllCaps="false"
-        android:textColor="@drawable/primary_color_button_text_color"
-        android:textSize="@dimen/_10sdp"
-        android:textStyle="bold"
+        android:src="@drawable/ic_front_nid"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="@+id/nameEdt"
         app:layout_constraintStart_toStartOf="@+id/nameEdt"
         app:layout_constraintTop_toTopOf="@+id/guideline34" />
 
-    <android.widget.Button
-        android:id="@+id/takePhotoBtn2"
+    <ImageView
+        android:id="@+id/nidBackImage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/outlined_corner_rounded_button_shape"
-        android:drawableTop="@drawable/ic_back_nid"
-        android:fontFamily="@font/montserrat_alternates"
         android:paddingTop="@dimen/_15sdp"
         android:paddingBottom="@dimen/_15sdp"
-        android:text="Select the back picture of your nid"
-        android:textAllCaps="false"
-        android:textColor="@drawable/primary_color_button_text_color"
-        android:textSize="@dimen/_10sdp"
-        android:textStyle="bold"
+        android:src="@drawable/ic_back_nid"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="@+id/nameEdt"
         app:layout_constraintStart_toStartOf="@+id/nameEdt"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginLeft="@dimen/_18sdp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:text="Account Information"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline26" />
+
+    <android.widget.Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/white_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingTop="@dimen/_7sdp"
+        android:paddingRight="@dimen/_30sdp"
+        android:paddingBottom="@dimen/_7sdp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@drawable/white_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toEndOf="@+id/nidNumEdt" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline26"
