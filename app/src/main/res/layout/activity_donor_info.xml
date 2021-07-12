@@ -253,7 +253,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline32"
@@ -303,7 +303,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline28" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/userTypeRadioGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"

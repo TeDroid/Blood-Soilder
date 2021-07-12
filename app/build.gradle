@@ -49,6 +49,9 @@ dependencies {
     implementation 'com.github.dhaval2404:imagepicker:2.1'
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
     implementation 'com.iceteck.silicompressorr:silicompressor:2.1'
+    implementation "com.google.android.material:material:1.2.1"
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-storage'
 
 }
 

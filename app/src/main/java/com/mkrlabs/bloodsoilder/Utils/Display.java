@@ -12,10 +12,10 @@ public class Display {
         Toasty.success(context,msg,Toasty.LENGTH_SHORT,true).show();
     }
     public  static void errorToast(Context context , String error){
-        Toasty.success(context,error,Toasty.LENGTH_SHORT,true).show();
+        Toasty.error(context,error,Toasty.LENGTH_SHORT,true).show();
     }
     public  static void infoToast(Context context , String info){
-        Toasty.success(context, info,Toasty.LENGTH_SHORT,true).show();
+        Toasty.info(context, info,Toasty.LENGTH_SHORT,true).show();
     }
 
 
