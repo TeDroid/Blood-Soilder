@@ -14,12 +14,13 @@ public class User {
     private Double lat;
     private Double lon;
     private boolean donation_status;
+    private String front_image;
 
 
     public User() {
     }
 
-    public User(String name, String phone, int nid, int pin, int user_type, boolean status, String uid, String blood_group, long account_created_at) {
+    public User(String name, String phone, int nid, int pin, int user_type, boolean status, String uid, String blood_group, long account_created_at,String front_image) {
         this.name = name;
         this.phone = phone;
         this.nid = nid;
@@ -29,6 +30,15 @@ public class User {
         this.uid = uid;
         this.blood_group = blood_group;
         this.account_created_at = account_created_at;
+        this.front_image = front_image;
+    }
+
+    public String getFront_image() {
+        return front_image;
+    }
+
+    public void setFront_image(String front_image) {
+        this.front_image = front_image;
     }
 
     public String getName() {
