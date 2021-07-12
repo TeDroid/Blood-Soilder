@@ -24,13 +24,11 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.mkrlabs.bloodsoilder.R;
+import com.mkrlabs.bloodsoilder.Utils.AccountCreation;
 import com.mkrlabs.bloodsoilder.Utils.Display;
-import com.mkrlabs.bloodsoilder.ui.account.userinformation.PersonalInfoActivity;
+import com.mkrlabs.bloodsoilder.ui.account.userinformation.UserAccountInformation;
 
-import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
-
-import javax.sql.StatementEvent;
 
 public class VerifyAccountActivity extends AppCompatActivity {
 
@@ -122,9 +120,11 @@ public class VerifyAccountActivity extends AppCompatActivity {
     private void verifyOTPCode(String code){
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
 
+        AccountCreation.phone = phone;
         signInWithPhoneAuthCredential(credential);
 
     }
+
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
@@ -137,7 +137,14 @@ public class VerifyAccountActivity extends AppCompatActivity {
 
                             FirebaseUser user = task.getResult().getUser();
                             // Update UI
+
+                            AccountCreation.uid = user.getUid();
                             Display.successToast(VerifyAccountActivity.this,"Success Valid Number");
+                            Intent intent = new Intent(VerifyAccountActivity.this, UserAccountInformation.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -149,6 +156,7 @@ public class VerifyAccountActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
     private  void  init (){
         verifyBtn= findViewById(R.id.verifyBtn);
