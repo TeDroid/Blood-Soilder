@@ -21,8 +21,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -40,6 +42,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 import com.mkrlabs.bloodsoilder.R;
 import com.mkrlabs.bloodsoilder.Utils.Display;
+import com.mkrlabs.bloodsoilder.ui.HomeActivity;
 import com.mkrlabs.bloodsoilder.ui.account.CreateAccountActivity;
 
 import java.security.Permission;
@@ -63,6 +66,12 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
 
     private TextView findDonarDateTV,selectTimeTV;
 
+    // blood radio button
+    RadioGroup mFirstGroup;
+    RadioGroup mSecondGroup;
+    boolean isChecking = true;
+    int mCheckedId = R.id.type1;
+
     public HomeMapFragment() {
     }
 
@@ -78,6 +87,7 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
     private void init(View view) {
         homeMapBloodSearch = view.findViewById(R.id.homeMapBloodSearch);
 
+
     }
 
     @Override
@@ -92,6 +102,10 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
                 openSearchDialog();
             }
         });
+
+
+
+
     }
 
     private void openSearchDialog() {
@@ -108,6 +122,10 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
         MaterialCardView selectTimeCV = view.findViewById(R.id.pickTimeCV);
         MaterialCardView selectLocationCV = view.findViewById(R.id.setLocationCV);
 
+
+        mFirstGroup = view.findViewById(R.id.first_group);
+        mSecondGroup = view.findViewById(R.id.second_group);
+
         selectDateCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +140,30 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
         });
 
         dialog.show();
+
+        mFirstGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId != -1 && isChecking) {
+                    isChecking = false;
+                    mSecondGroup.clearCheck();
+                    mCheckedId = checkedId;
+                }
+                isChecking = true;
+            }
+        });
+
+        mSecondGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId != -1 && isChecking) {
+                    isChecking = false;
+                    mFirstGroup.clearCheck();
+                    mCheckedId = checkedId;
+                }
+                isChecking = true;
+            }
+        });
     }
 
     private void setUpTimeWindow() {
@@ -232,6 +274,8 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
                 .snippet("current location");
         googleMap.addMarker(markerOptions);
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
