@@ -7,161 +7,161 @@
     android:background="@color/primaryColor"
     tools:context=".ui.account.userinformation.DonorInfoActivity">
 
-
-    <android.widget.Button
-        android:id="@+id/bMinusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="B+"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/bPlusGroup"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <android.widget.Button
-        android:id="@+id/bPlusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="B+"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/bMinusGroup"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/aMinusGroup"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <android.widget.Button
-        android:id="@+id/doneBtn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/bloodGroupSelectorLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_24sdp"
-        android:autoSizeTextType="uniform"
-        android:background="@drawable/white_button_shape"
-        android:fontFamily="@font/montserrat_alternates"
-        android:minHeight="0dp"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingTop="@dimen/_7sdp"
-        android:paddingRight="@dimen/_30sdp"
-        android:paddingBottom="@dimen/_7sdp"
-        android:text="Done"
-        android:textAllCaps="false"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="@dimen/_10sdp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline35"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline34" />
-
-    <android.widget.Button
-        android:id="@+id/aPlusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="A+"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/aMinusGroup"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <android.widget.Button
-        android:id="@+id/abPlusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="AB+"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline34"
-        app:layout_constraintEnd_toStartOf="@+id/abMinusGroup"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aPlusGroup" />
-
-    <android.widget.Button
-        android:id="@+id/oMinusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="O-"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:orientation="vertical"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline34"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/oPlusGroup"
-        app:layout_constraintTop_toBottomOf="@+id/bMinusGroup" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
 
-    <android.widget.Button
-        android:id="@+id/oPlusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="O+"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline34"
-        app:layout_constraintEnd_toStartOf="@+id/oMinusGroup"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/abMinusGroup"
-        app:layout_constraintTop_toBottomOf="@+id/bPlusGroup" />
 
-    <android.widget.Button
-        android:id="@+id/abMinusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="AB-"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline34"
-        app:layout_constraintEnd_toStartOf="@+id/oPlusGroup"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/abPlusGroup"
-        app:layout_constraintTop_toBottomOf="@+id/aMinusGroup" />
+        <TextView
 
-    <android.widget.Button
-        android:id="@+id/aMinusGroup"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/white_round_button_shape"
-        android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="A-"
-        android:textColor="@drawable/white_button_text_color"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/bPlusGroup"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/aPlusGroup"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            android:id="@+id/bloodTuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/montserrat_alternates"
+            android:text="Choose Your Blood Group"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+
+        <RadioGroup
+            android:id="@+id/first_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/type1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="A+"
+                android:textColor="@drawable/radio_text_color" />
+
+            <RadioButton
+                android:id="@+id/type2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="A-"
+                android:textColor="@drawable/radio_text_color"
+
+                />
+
+            <RadioButton
+                android:id="@+id/type3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="B+"
+                android:textColor="@drawable/radio_text_color" />
+
+            <RadioButton
+                android:id="@+id/type4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="B-"
+                android:textColor="@drawable/radio_text_color"
+
+                />
+
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/second_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/type5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="AB+"
+                android:textColor="@drawable/radio_text_color" />
+
+            <RadioButton
+                android:id="@+id/type6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="AB-"
+                android:textColor="@drawable/radio_text_color"
+
+                />
+
+            <RadioButton
+                android:id="@+id/type7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="O+"
+                android:textColor="@drawable/radio_text_color" />
+
+            <RadioButton
+                android:id="@+id/type8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_selector_layout"
+                android:button="@android:color/transparent"
+                android:fontFamily="@font/montserrat_alternates_bold"
+                android:gravity="center"
+                android:text="O-"
+                android:textColor="@drawable/radio_text_color" />
+
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
 
     <TextView
 
@@ -179,20 +179,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline26" />
 
-    <TextView
-
-        android:id="@+id/bloodTuto"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_18sdp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/montserrat_alternates"
-        android:text="Choose Your Blood Group"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_14sdp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <ImageView
         android:id="@+id/upperFrameImage"
@@ -317,6 +303,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline28" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -334,6 +321,7 @@
             android:buttonTint="@color/white"
             android:fontFamily="@font/montserrat_alternates_bold"
             android:text="Seeker"
+            android:checked="true"
             android:textColor="@color/white" />
 
         <RadioButton
@@ -350,7 +338,6 @@
     </RadioGroup>
 
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -359,12 +346,27 @@
         app:layout_constraintGuide_percent="0.52" />
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
+    <android.widget.Button
+        android:id="@+id/doneBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.56" />
+        android:layout_marginEnd="@dimen/_24sdp"
+        android:layout_marginBottom="16dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/white_button_shape"
+        android:fontFamily="@font/montserrat_alternates"
+        android:minHeight="0dp"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingTop="@dimen/_7sdp"
+        android:paddingRight="@dimen/_30sdp"
+        android:paddingBottom="@dimen/_7sdp"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="@drawable/white_button_text_color"
+        android:textSize="@dimen/_10sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

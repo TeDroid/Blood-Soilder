@@ -10,6 +10,7 @@ import android.os.Looper;
 import com.mkrlabs.bloodsoilder.Utils.DisplayUtils;
 import com.mkrlabs.bloodsoilder.ui.HomeActivity;
 import com.mkrlabs.bloodsoilder.ui.account.CreateAccountActivity;
+import com.mkrlabs.bloodsoilder.ui.account.userinformation.DonorInfoActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                startActivity(new Intent(SplashActivity.this, DonorInfoActivity.class));
                 finish();
             }
         },2500);
