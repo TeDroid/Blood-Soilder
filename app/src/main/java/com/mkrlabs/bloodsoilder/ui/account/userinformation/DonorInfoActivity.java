@@ -27,7 +27,7 @@ import com.mkrlabs.bloodsoilder.model.User;
 import com.mkrlabs.bloodsoilder.ui.HomeActivity;
 import com.mkrlabs.bloodsoilder.ui.account.VerifyAccountActivity;
 
-public class DonorInfoActivity extends AppCompatActivity {
+public class DonorInfoActivity extends AppCompatActivity implements AccountContract.View {
     RadioGroup userTypeRadioGroup;
     RadioButton radioButton;
     private Button doneBtn;
@@ -194,4 +194,23 @@ public class DonorInfoActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
+    public void onAccountSuccess() {
+
+    }
+
+    @Override
+    public void onAccountFailure(String error) {
+
+    }
 }
