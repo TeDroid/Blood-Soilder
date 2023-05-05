@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                     finish();
                 }else {
-                    startActivity(new Intent(SplashActivity.this, CreateAccountActivity.class));
+                    startActivity(new Intent(SplashActivity.this, UserAccountInformation.class));
                     finish();
                 }
 

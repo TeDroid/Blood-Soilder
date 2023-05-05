@@ -159,20 +159,17 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
 
 
         Log.v("Info","Name "+ AccountCreation.name);
-        Log.v("Info","Pin "+ AccountCreation.pin);
-        Log.v("Info","Phone "+ AccountCreation.phone);
-        Log.v("Info","Front Image "+ AccountCreation.frontImage.toString());
-        Log.v("Info","Back Image "+ AccountCreation.backImage.toString());
+        Log.v("Info","Email "+ AccountCreation.email);
+        Log.v("Info","Password "+ AccountCreation.password);
+        Log.v("Info","Profile Image "+ AccountCreation.profileImage.getPath().toString());
         Log.v("Info","User Type "+ User_Type);
         Log.v("Info","Blood Group "+ BLOOD_GROUP);
 
         StringBuilder user = new StringBuilder();
         user.append("Name "+ AccountCreation.name+"\n");
-        user.append("Pin "+ AccountCreation.pin+"\n");
-        user.append("Phone "+ AccountCreation.phone+"\n");
-        user.append("Nid "+ AccountCreation.nid+"\n");
-        user.append("Front Image "+ AccountCreation.frontImage.getPath()+"\n");
-        user.append("back Image "+ AccountCreation.backImage.getPath()+"\n");
+        user.append("Email "+ AccountCreation.email+"\n");
+        user.append("Password "+ AccountCreation.phone+"\n");
+        user.append("Profile Image "+ AccountCreation.profileImage.getPath()+"\n");
         user.append("User Type "+ User_Type+"\n");
         user.append("Blood Group "+ BLOOD_GROUP+"\n");
 
@@ -187,7 +184,20 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
     }
 
     private void createUserAccount() {
-        uploadImage(AccountCreation.frontImage);
+        mAuth.createUserWithEmailAndPassword(AccountCreation.email,AccountCreation.password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+
+                    String user_UID = task.getResult().getUser().getUid().toString();
+
+                    uploadImage(AccountCreation.profileImage,user_UID);
+
+                }else {
+                    Display.errorToast(DonorInfoActivity.this, task.getException().getMessage());
+                }
+            }
+        });
     }
 
     private void init() {
@@ -264,7 +274,7 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
         }
         return imageFile;
     }
-    private void uploadImage(Uri uri) {
+    private void uploadImage(Uri uri,String user_uid) {
         dialog.show();
         String pushKey = firebaseFirestore.collection(NodeName.USER_NODE).document().getId();
         Bitmap bitmap = uriToBitmap(uri);
@@ -282,9 +292,9 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
 
                 frontImageUrl = downloadUrl;
                 long timestamp = Calendar.getInstance().getTime().getTime();
-
-                User user = new User(AccountCreation.name,AccountCreation.phone,AccountCreation.nid,AccountCreation.pin
-                        ,User_Type,true,AccountCreation.uid,BLOOD_GROUP,timestamp,frontImageUrl);
+//    public User(String name, String phone, String email, String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
+                User user = new User(AccountCreation.name,AccountCreation.email,AccountCreation.password
+                        ,User_Type,true,user_uid,BLOOD_GROUP,timestamp,0.0,0.0,true,frontImageUrl);
 
                 presenter.createAccount(user);
 
@@ -300,7 +310,7 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
 
                 Display.errorToast(DonorInfoActivity.this,"Image Upload Failed");
             }
-        },storageReference.child("user_nid").child(pushKey));
+        },storageReference.child("user_image").child(pushKey));
         firebaseUploader.uploadImage(DonorInfoActivity.this,file);
 
 

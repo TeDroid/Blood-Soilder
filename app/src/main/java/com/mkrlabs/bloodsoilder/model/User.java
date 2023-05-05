@@ -3,9 +3,8 @@ package com.mkrlabs.bloodsoilder.model;
 public class User {
 
     private String name;
-    private String phone;
-    private int  nid;
-    private int  pin;
+    private  String email;
+    private  String password;
     private int  user_type;
     private boolean  status;
     private String  uid;
@@ -14,31 +13,25 @@ public class User {
     private Double lat;
     private Double lon;
     private boolean donation_status;
-    private String front_image;
+    private String profileImage;
 
 
     public User() {
     }
 
-    public User(String name, String phone, int nid, int pin, int user_type, boolean status, String uid, String blood_group, long account_created_at,String front_image) {
+    public User(String name, String email, String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
         this.name = name;
-        this.phone = phone;
-        this.nid = nid;
-        this.pin = pin;
+        this.email = email;
+        this.password = password;
         this.user_type = user_type;
         this.status = status;
         this.uid = uid;
         this.blood_group = blood_group;
         this.account_created_at = account_created_at;
-        this.front_image = front_image;
-    }
-
-    public String getFront_image() {
-        return front_image;
-    }
-
-    public void setFront_image(String front_image) {
-        this.front_image = front_image;
+        this.lat = lat;
+        this.lon = lon;
+        this.donation_status = donation_status;
+        this.profileImage = profileImage;
     }
 
     public String getName() {
@@ -49,28 +42,22 @@ public class User {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getNid() {
-        return nid;
+    public String getPassword() {
+        return password;
     }
 
-    public void setNid(int nid) {
-        this.nid = nid;
-    }
-
-    public int getPin() {
-        return pin;
-    }
-
-    public void setPin(int pin) {
-        this.pin = pin;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getUser_type() {
@@ -135,5 +122,13 @@ public class User {
 
     public void setDonation_status(boolean donation_status) {
         this.donation_status = donation_status;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 }

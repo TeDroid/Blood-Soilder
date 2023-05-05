@@ -11,9 +11,8 @@ public class AccountCreation {
     public static String uid = null;
     public static String phone =null;
     public static String name =null;
-    public static int nid ;
-    public static int pin ;
-    public static Uri frontImage =null;
-    public static Uri backImage =null;
+    public static String email =null;
+    public static String password =null;
+    public static Uri profileImage =null;
 
 }

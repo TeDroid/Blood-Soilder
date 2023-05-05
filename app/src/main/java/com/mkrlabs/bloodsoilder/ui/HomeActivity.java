@@ -12,9 +12,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mkrlabs.bloodsoilder.R;
 import com.mkrlabs.bloodsoilder.Utils.DisplayUtils;
 import com.mkrlabs.bloodsoilder.ui.activity.ActivityFragment;
+import com.mkrlabs.bloodsoilder.ui.home.HomeFragment;
 import com.mkrlabs.bloodsoilder.ui.homemap.HomeMapFragment;
 import com.mkrlabs.bloodsoilder.ui.profile.ProfileFragment;
 import com.mkrlabs.bloodsoilder.ui.request.RequestFragment;
+import com.mkrlabs.customstatusbar.CustomStatusBar;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -26,18 +28,18 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DisplayUtils.setSystemBarColor(this, R.color.white, true);
+        CustomStatusBar.setCustomStatusColor(this,R.color.primaryColor,false);
         setContentView(R.layout.activity_home);
         init();
 
         homeBottomNavigation.setSelectedItemId(R.id.homeItem);
-        setUpFragment(new HomeMapFragment());
+        setUpFragment(new HomeFragment());
         homeBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.homeItem:
-                        setUpFragment(new HomeMapFragment());
+                        setUpFragment(new HomeFragment());
                         return true;
                     case R.id.requestItem:
                         setUpFragment(new RequestFragment());

@@ -1,107 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor"
-    tools:context=".ui.account.userinformation.UserAccountInformation">
-
+    tools:context=".ui.account.LoginActivity">
 
     <EditText
-        android:id="@+id/nameEdt"
+        android:id="@+id/loginEmailEdt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_24sdp"
-        android:layout_marginLeft="@dimen/_24sdp"
         android:layout_marginEnd="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_24sdp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_alternates"
-        android:gravity="left"
-        android:hint="Full name"
-        android:inputType="text"
-        android:textColor="@color/white"
-        android:textColorHint="@color/pale_white"
-        android:textCursorDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@+id/emailEdt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline30" />
-
-    <EditText
-        android:id="@+id/emailEdt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:ems="10"
         android:fontFamily="@font/montserrat_alternates"
         android:gravity="left"
         android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/pale_white"
         android:textCursorDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEdt"
-        app:layout_constraintEnd_toEndOf="@+id/nameEdt"
-        app:layout_constraintStart_toStartOf="@+id/nameEdt"
-        app:layout_constraintTop_toBottomOf="@+id/nameEdt" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline34"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline30" />
 
     <EditText
-        android:id="@+id/passwordEdt"
+        android:id="@+id/loginPasswordEdt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/_24sdp"
         android:backgroundTint="@color/white"
         android:ems="10"
         android:fontFamily="@font/montserrat_alternates"
         android:gravity="left"
         android:hint="Password"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/pale_white"
         android:textCursorDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@+id/confirmPasswordEdt"
-        app:layout_constraintEnd_toEndOf="@+id/emailEdt"
-        app:layout_constraintStart_toStartOf="@+id/emailEdt"
-        app:layout_constraintTop_toBottomOf="@+id/emailEdt" />
-
-    <EditText
-        android:id="@+id/confirmPasswordEdt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_alternates"
-        android:gravity="left"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/pale_white"
-        android:textCursorDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@+id/guideline34"
-        app:layout_constraintEnd_toEndOf="@+id/passwordEdt"
-        app:layout_constraintStart_toStartOf="@+id/passwordEdt"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEdt" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleProfileImage"
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
-        android:src="@drawable/ic_add_profile_pic_logo"
-        app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline28" />
+        app:layout_constraintTop_toBottomOf="@+id/loginEmailEdt" />
 
-    <ImageView
-        android:id="@+id/imageAddPlusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_plus_sign_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/circleProfileImage"
-        app:layout_constraintEnd_toEndOf="@+id/circleProfileImage" />
+
+
 
     <ImageView
         android:id="@+id/upperFrameImage"
@@ -151,7 +98,6 @@
         android:layout_height="@dimen/_15sdp"
         android:alpha=".5"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
-        app:layout_constraintEnd_toStartOf="@+id/circleProfileImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline28"
         app:srcCompat="@drawable/bubble" />
@@ -164,7 +110,7 @@
         android:layout_marginLeft="@dimen/_18sdp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/montserrat_alternates_bold"
-        android:text="Account Information"
+        android:text="Login"
         android:textColor="@color/white"
         android:textSize="@dimen/_18sdp"
         android:textStyle="bold"
@@ -173,9 +119,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline26" />
 
     <android.widget.Button
-        android:id="@+id/accountInfoNextButton"
+        android:id="@+id/loginLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:autoSizeTextType="uniform"
         android:background="@drawable/white_button_shape"
         android:fontFamily="@font/montserrat_alternates"
@@ -184,13 +131,13 @@
         android:paddingTop="@dimen/_7sdp"
         android:paddingRight="@dimen/_30sdp"
         android:paddingBottom="@dimen/_7sdp"
-        android:text="Next"
+        android:text="Login"
         android:textAllCaps="false"
         android:textColor="@drawable/white_button_text_color"
         android:textSize="@dimen/_10sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintEnd_toEndOf="@+id/confirmPasswordEdt" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -257,12 +204,12 @@
         app:layout_constraintGuide_percent="0.96" />
 
     <TextView
-        android:id="@+id/registrationAlreadyHaveAccount"
+        android:id="@+id/dontHaveAnAccountTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/montserrat_alternates"
-        android:text="Already have an Account ? Login In"
+        android:text="Don't have an Account ? Create Account"
         android:textSize="@dimen/_12sdp"
         android:textColor="@color/white"
         android:textAlignment="center"
@@ -270,6 +217,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
