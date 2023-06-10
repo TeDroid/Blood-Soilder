@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.profile.ProfileFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+   <!-- <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@drawable/action_bar_design"
@@ -28,7 +28,176 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <ProgressBar
+        android:id="@+id/profileProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/primaryColor"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileCircleImageView"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/bubble"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileCircleImageView">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha=".5"
+                android:padding="@dimen/_7sdp"
+                android:text="Name"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/profileUserName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:alpha=".8"
+                android:padding="@dimen/_7sdp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha=".5"
+                android:padding="@dimen/_7sdp"
+                android:text="Phone"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/profileUserPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:alpha=".8"
+                android:padding="@dimen/_7sdp"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha=".5"
+                android:padding="@dimen/_7sdp"
+                android:text="Email"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/profileUserEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:alpha=".8"
+                android:padding="@dimen/_7sdp"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha=".5"
+                android:padding="@dimen/_7sdp"
+                android:text="Blood Group"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/profileUserBloodGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:alpha=".8"
+                android:padding="@dimen/_7sdp"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textColor="@color/textColorD"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/profileEditIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toBottomOf="@+id/profileCircleImageView"
+        app:layout_constraintStart_toEndOf="@+id/profileCircleImageView"
+        app:layout_constraintTop_toTopOf="@+id/profileCircleImageView"
+        app:layout_constraintVertical_bias="0.812" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

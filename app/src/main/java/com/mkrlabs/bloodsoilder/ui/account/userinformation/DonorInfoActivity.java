@@ -32,6 +32,7 @@ import com.mkrlabs.bloodsoilder.R;
 import com.mkrlabs.bloodsoilder.Utils.AccountCreation;
 import com.mkrlabs.bloodsoilder.Utils.Display;
 import com.mkrlabs.bloodsoilder.Utils.FirebaseUploader;
+import com.mkrlabs.bloodsoilder.Utils.MySharedPref;
 import com.mkrlabs.bloodsoilder.Utils.NodeName;
 import com.mkrlabs.bloodsoilder.model.User;
 import com.mkrlabs.bloodsoilder.ui.HomeActivity;
@@ -65,6 +66,7 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
     private ProgressDialog dialog;
     private FirebaseFirestore firebaseFirestore;
     private String frontImageUrl=null;
+    private MySharedPref sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,7 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         storageReference= FirebaseStorage.getInstance().getReference();
+        sharedPref = new MySharedPref(this);
         dialog = new ProgressDialog(this);
         presenter = new AccountPresenter(this);
         mFirstGroup.clearCheck();
@@ -293,10 +296,14 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
                 frontImageUrl = downloadUrl;
                 long timestamp = Calendar.getInstance().getTime().getTime();
 //    public User(String name, String phone, String email, String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
-                User user = new User(AccountCreation.name,AccountCreation.email,AccountCreation.password
+                User user = new User(AccountCreation.name,AccountCreation.email,"",AccountCreation.password
                         ,User_Type,true,user_uid,BLOOD_GROUP,timestamp,0.0,0.0,true,frontImageUrl);
 
+                sharedPref.setUSER_NAME(user.getName());
+                sharedPref.setUSER_IMAGE(frontImageUrl);
+                sharedPref.setUID(user.getUid());
                 presenter.createAccount(user);
+
 
             }
 

@@ -30,51 +30,23 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbarConstrainLayout">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/walletMyCoinButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_7sdp"
-            android:layout_weight="1"
-            android:fontFamily="@font/montserrat_alternates"
-            android:text="Donate"
-            android:elevation="@dimen/_6sdp"
-            android:textAllCaps="false"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:textColor="@color/white" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/walletCashOutButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_7sdp"
-            android:layout_weight="1"
-            android:fontFamily="@font/montserrat_alternates"
-            android:text="Seek"
-            android:foreground="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:textAllCaps="false"
-            android:textColor="@color/primaryColor" />
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/requestFrameContainer"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/requestedRV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/appbarConstrainLayout" />
+
+    <ProgressBar
+        android:id="@+id/requestedProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/requestedRV"
+        app:layout_constraintTop_toBottomOf="@+id/appbarConstrainLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

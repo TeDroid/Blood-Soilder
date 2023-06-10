@@ -1,5 +1,7 @@
 package com.mkrlabs.bloodsoilder.model;
 
+import androidx.annotation.NonNull;
+
 public class User {
 
     private String name;
@@ -14,12 +16,13 @@ public class User {
     private Double lon;
     private boolean donation_status;
     private String profileImage;
+    private String phone;
 
 
     public User() {
     }
 
-    public User(String name, String email, String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
+    public User(String name, String email,String phone, String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -32,6 +35,15 @@ public class User {
         this.lon = lon;
         this.donation_status = donation_status;
         this.profileImage = profileImage;
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getName() {
@@ -130,5 +142,23 @@ public class User {
 
     public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", user_type=" + user_type +
+                ", status=" + status +
+                ", uid='" + uid + '\'' +
+                ", blood_group='" + blood_group + '\'' +
+                ", account_created_at=" + account_created_at +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                ", donation_status=" + donation_status +
+                ", profileImage='" + profileImage + '\'' +
+                '}';
     }
 }
