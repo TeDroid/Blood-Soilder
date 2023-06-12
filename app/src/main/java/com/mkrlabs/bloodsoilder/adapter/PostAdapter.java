@@ -74,6 +74,8 @@ public class PostAdapter  extends  RecyclerView.Adapter<PostAdapter.PostViewHold
             holder.postStatus.setVisibility(View.VISIBLE);
             holder.acceptReqBtn.setVisibility(View.GONE);
             holder.postCallButton.setVisibility(View.GONE);
+            holder.postStatus.setChecked(item.isStatus());
+
         }else {
             holder.postRemoveButton.setVisibility(View.GONE);
             holder.postStatus.setVisibility(View.GONE);

@@ -20,12 +20,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
+                android:id="@+id/homeLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:padding="@dimen/_7sdp"
-                android:src="@drawable/ic_outline_notifications_active_24"
+                android:src="@drawable/baseline_logout_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -1,8 +1,11 @@
 package com.mkrlabs.bloodsoilder.ui.home;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.InetAddresses;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -51,6 +54,7 @@ import com.mkrlabs.bloodsoilder.model.BloodRequestItem;
 import com.mkrlabs.bloodsoilder.model.User;
 import com.mkrlabs.bloodsoilder.notification.NotificationItem;
 import com.mkrlabs.bloodsoilder.notification.NotificationResponse;
+import com.mkrlabs.bloodsoilder.ui.account.LoginActivity;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -87,6 +91,7 @@ public class HomeFragment extends Fragment {
     private MySharedPref sharedPref;
     private User user;
     private ApiServices apiServices ;
+    private ImageButton homeLogout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -118,6 +123,29 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        homeLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                new AlertDialog.Builder(getContext())
+                        .setTitle("Logout ")
+                        .setMessage("Are you sure you want to logout ?")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                FirebaseAuth.getInstance().signOut();
+                                Intent intent = new Intent(getContext(), LoginActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                getActivity().finish();
+                            }
+                        })
+
+                        // A null listener allows the button to dismiss the dialog and take no further action.
+                        .setNegativeButton(android.R.string.no, null)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }
+        });
 
         adapter.setPostItemClickListener(new PostAdapter.PostItemClickListener() {
             @Override
@@ -169,6 +197,7 @@ public class HomeFragment extends Fragment {
     private void init(View view) {
         postList = new ArrayList<>();
         homeBloodSearch = view.findViewById(R.id.homeBloodSearch);
+        homeLogout = view.findViewById(R.id.homeLogout);
         homeRV = view.findViewById(R.id.homeRV);
         progressBarHome = view.findViewById(R.id.progressBarHome);
         setUpRecycleView();
