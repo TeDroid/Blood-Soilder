@@ -28,7 +28,7 @@ public class UserAccountInformation extends AppCompatActivity {
 
     private ImageView imageAddPlusButton;
     private CircleImageView circleProfileImage;
-    private EditText nameEdt, emailEdt, passwordEdt, confirmPasswordEdt;
+    private EditText nameEdt, emailEdt, phoneEdt, passwordEdt, confirmPasswordEdt;
     private String name ;
     private int pin , nid_no;
     Button accountInfoNextButton;
@@ -73,6 +73,7 @@ public class UserAccountInformation extends AppCompatActivity {
 
         name = nameEdt.getText().toString();
         String email = emailEdt.getText().toString();
+        String phone = phoneEdt.getText().toString();
         String password = passwordEdt.getText().toString();
         String confirmPassword = confirmPasswordEdt.getText().toString();
 
@@ -84,6 +85,11 @@ public class UserAccountInformation extends AppCompatActivity {
             emailEdt.setError("required");
             return;
         }
+        if (TextUtils.isEmpty(phone)){
+            phoneEdt.setError("required");
+            return;
+        }
+
         if (TextUtils.isEmpty(password)){
             passwordEdt.setError("required");
             return;
@@ -108,6 +114,7 @@ public class UserAccountInformation extends AppCompatActivity {
 
             AccountCreation.name=name;
             AccountCreation.email=email;
+            AccountCreation.phone=phone;
             AccountCreation.password=password;
             AccountCreation.profileImage= profileImage;
 
@@ -128,6 +135,7 @@ public class UserAccountInformation extends AppCompatActivity {
 
         nameEdt=findViewById(R.id.nameEdt);
         emailEdt =findViewById(R.id.emailEdt);
+        phoneEdt =findViewById(R.id.phoneEdt);
         passwordEdt =findViewById(R.id.passwordEdt);
         confirmPasswordEdt =findViewById(R.id.confirmPasswordEdt);
         accountInfoNextButton=findViewById(R.id.accountInfoNextButton);

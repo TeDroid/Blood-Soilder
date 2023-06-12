@@ -22,7 +22,7 @@ public class BloodRequestItem {
     public BloodRequestItem() {
     }
 
-    public BloodRequestItem(String pid, Timestamp time,String hospitalName, String hospitalAddress, Timestamp timestamp, String bloodGroup, boolean status, String requestBy, boolean transportationExpense, String contactNumber, String requestOwnerName, String requestOwnerImage) {
+    public BloodRequestItem(String pid,  Timestamp time,String hospitalName, String hospitalAddress, Timestamp timestamp, String bloodGroup, boolean status, String requestBy, boolean transportationExpense, String contactNumber, String requestOwnerName, String requestOwnerImage) {
         this.pId = pid;
         this.time = time;
         this.hospitalName = hospitalName;

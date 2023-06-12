@@ -131,6 +131,11 @@ public class RequestFragment extends Fragment {
                 ;
 
             }
+
+            @Override
+            public void OnCallClick(String phone) {
+
+            }
         });
 
     }

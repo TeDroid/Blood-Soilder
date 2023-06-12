@@ -171,6 +171,7 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
         StringBuilder user = new StringBuilder();
         user.append("Name "+ AccountCreation.name+"\n");
         user.append("Email "+ AccountCreation.email+"\n");
+        user.append("Phone "+ AccountCreation.phone+"\n");
         user.append("Password "+ AccountCreation.phone+"\n");
         user.append("Profile Image "+ AccountCreation.profileImage.getPath()+"\n");
         user.append("User Type "+ User_Type+"\n");
@@ -296,7 +297,7 @@ public class DonorInfoActivity extends AppCompatActivity implements AccountContr
                 frontImageUrl = downloadUrl;
                 long timestamp = Calendar.getInstance().getTime().getTime();
 //    public User(String name, String phone, String email, String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
-                User user = new User(AccountCreation.name,AccountCreation.email,"",AccountCreation.password
+                User user = new User(AccountCreation.name,AccountCreation.email,AccountCreation.phone,AccountCreation.password
                         ,User_Type,true,user_uid,BLOOD_GROUP,timestamp,0.0,0.0,true,frontImageUrl);
 
                 sharedPref.setUSER_NAME(user.getName());

@@ -33,6 +33,11 @@ public class Utils {
     private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
     private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
     private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
+    public static String BASE_URL = "https://fcm.googleapis.com/fcm/";
+    public static String BLOOD_REQUEST_TOPIC = "/topics/blood_request";
+    public static String headerToken = "key=AAAAhgMgDBI:APA91bF-6DyNNo42Z-fx5giYjky_Rc9LNtDzq2dPCVLtteP47mRMy4ZRgIi1pUb9i723pouinWL6BVtSRAUD_UFJBoc2YidBUHIiwN38XZf4GAU_drU5TS3UAsNuUuYZb_kzv9aonOey";
+
+
 
 
     public static String getTimeAgo(long time ) {

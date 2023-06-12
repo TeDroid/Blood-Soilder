@@ -12,12 +12,12 @@
         android:icon="@drawable/ic_baseline_water_drop_24"
         android:title="Request"
         />
-    <item
+    <!--<item
         android:id="@+id/activityItem"
         android:icon="@drawable/ic_baseline_history_24"
         android:title="Activity"
 
-        />
+        />-->
     <item
         android:id="@+id/profileItem"
         android:icon="@drawable/ic_outline_person_outline_24"

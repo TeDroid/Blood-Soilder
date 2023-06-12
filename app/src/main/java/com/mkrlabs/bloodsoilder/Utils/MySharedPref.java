@@ -11,6 +11,7 @@ public class MySharedPref {
     private String USER_UID = "USER_UID";
     private String USER_IMAGE = "USER_IMAGE";
     private String USER_FIRST_TIME = "USER_FIRST_TIME";
+    private String NOTIFICATION_SUBSCRIBE="SUBSCRIPTION_TOPIC";
 
     public MySharedPref(Context context) {
         this.context = context;
@@ -39,6 +40,13 @@ public class MySharedPref {
     }
 
 
+    public void setNotificationSubscribed(boolean status){
+        default_prefence.edit().putBoolean(NOTIFICATION_SUBSCRIBE,status).apply();
+    }
+
+    public boolean isAlreadyNotificationSubscribed(){
+        return default_prefence.getBoolean(NOTIFICATION_SUBSCRIBE,false);
+    }
 
 
 

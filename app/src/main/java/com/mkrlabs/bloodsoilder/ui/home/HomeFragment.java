@@ -2,6 +2,8 @@ package com.mkrlabs.bloodsoilder.ui.home;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,11 +26,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -39,8 +43,14 @@ import com.mkrlabs.bloodsoilder.Utils.DisplayUtils;
 import com.mkrlabs.bloodsoilder.Utils.LayoutType;
 import com.mkrlabs.bloodsoilder.Utils.MySharedPref;
 import com.mkrlabs.bloodsoilder.Utils.NodeName;
+import com.mkrlabs.bloodsoilder.Utils.Utils;
 import com.mkrlabs.bloodsoilder.adapter.PostAdapter;
+import com.mkrlabs.bloodsoilder.api.ApiClient;
+import com.mkrlabs.bloodsoilder.api.ApiServices;
 import com.mkrlabs.bloodsoilder.model.BloodRequestItem;
+import com.mkrlabs.bloodsoilder.model.User;
+import com.mkrlabs.bloodsoilder.notification.NotificationItem;
+import com.mkrlabs.bloodsoilder.notification.NotificationResponse;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -49,6 +59,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 import es.dmoral.toasty.Toasty;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class HomeFragment extends Fragment {
@@ -72,9 +85,15 @@ public class HomeFragment extends Fragment {
     private ArrayList<BloodRequestItem> postList;
     private ProgressBar progressBarHome;
     private MySharedPref sharedPref;
+    private User user;
+    private ApiServices apiServices ;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        getUserInfo();
 
     }
 
@@ -88,6 +107,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         sharedPref = new MySharedPref(getContext());
+        apiServices = ApiClient.getInstance().create(ApiServices.class);
         init(view);
         getAllPostList();
 
@@ -115,12 +135,39 @@ public class HomeFragment extends Fragment {
             public void OnStatusChanged(String pId,boolean status) {
 
             }
+
+            @Override
+            public void OnCallClick(String phone) {
+                if (phone.isEmpty() || phone ==null){
+                    Display.infoToast(getContext(),"User doesn't update his phone number");
+                }else {
+                    String user_phone = "+34666777888";
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", user_phone, null));
+                    startActivity(intent);
+
+                }
+            }
         });
 
     }
+    private void getUserInfo(){
+        firebaseFirestore.collection(NodeName.USER_NODE).document(FirebaseAuth.getInstance().getUid().toString())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()){
+                            user = task.getResult().toObject(User.class);
+
+
+                        }else {
+
+                            Log.v("Error",task.getException().getLocalizedMessage());
+                        }
+                    }
+                });    }
     private void init(View view) {
         postList = new ArrayList<>();
-        firebaseFirestore = FirebaseFirestore.getInstance();
         homeBloodSearch = view.findViewById(R.id.homeBloodSearch);
         homeRV = view.findViewById(R.id.homeRV);
         progressBarHome = view.findViewById(R.id.progressBarHome);
@@ -235,6 +282,7 @@ public class HomeFragment extends Fragment {
         findDonorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String location = searchBloodLocationEdt.getText().toString();
                 String hospitalName = bloodSearchHospitalNameEdt.getText().toString();
 
@@ -286,6 +334,7 @@ public class HomeFragment extends Fragment {
         bloodRequestItem.setRequestBy(sharedPref.getUID());
         bloodRequestItem.setRequestOwnerName(sharedPref.getUSER_NAME());
         bloodRequestItem.setRequestOwnerImage(sharedPref.getUSER_IMAGE());
+        bloodRequestItem.setContactNumber(user!=null?user.getPhone():"");
 
         String pid = firebaseFirestore.collection(NodeName.BLOOD_REQUEST_NODE).document().getId();
         bloodRequestItem.setpId(pid);
@@ -310,6 +359,7 @@ public class HomeFragment extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Display.successToast(getContext(),"Blood Requested Successfully");
+                    triggerNotification();
                     dialog.dismiss();
                 }else {
                     dialog.dismiss();
@@ -323,6 +373,39 @@ public class HomeFragment extends Fragment {
 
 
 
+    }
+
+    private void triggerNotification() {
+
+
+        String to = Utils.BLOOD_REQUEST_TOPIC;
+        String header = Utils.headerToken;
+        String title = "Blood Request ";
+        String description = "Urgent need "+BLOOD_GROUP +" blood group";
+        NotificationItem notificationItem = new NotificationItem();
+
+        NotificationItem.NotificationBody notificationBody = new NotificationItem.NotificationBody();
+        notificationBody.title = title;
+        notificationBody.body = description;
+
+        notificationItem.notification = notificationBody;
+        notificationItem.to=to;
+        apiServices.postNotification(notificationItem,header).enqueue(new Callback<NotificationResponse>() {
+            @Override
+            public void onResponse(Call<NotificationResponse> call, Response<NotificationResponse> response) {
+                if (response.isSuccessful() && response.raw().code() == 200){
+                    Display.infoToast(getContext(),"Notification Triggered");
+                }else {
+                    Display.infoToast(getContext(),"Something went wrong "+ response.raw().message());
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<NotificationResponse> call, Throwable t) {
+
+            }
+        });
     }
 
 

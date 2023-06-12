@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/montserrat_alternates"
-        android:text="01856245922469"
+        android:text=""
         android:textColor="@color/ash_black"
         android:textSize="@dimen/_7sdp"
         app:layout_constraintEnd_toEndOf="@+id/seekerNameTxt"
@@ -87,21 +87,21 @@
         app:layout_constraintStart_toEndOf="@+id/profile_image"
         app:layout_constraintTop_toTopOf="@+id/profile_image" />
 
-    <TextView
-        android:id="@+id/transportIncldTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:autoSizeTextType="uniform"
-        android:drawableLeft="@drawable/ic_tick_mark_icon"
-        android:fontFamily="@font/montserrat_alternates"
-        android:text="Transportation Included"
-        android:textColor="@color/primaryColor"
-        android:textSize="@dimen/_4sdp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/bloodGroupBoldTxt"
-        app:layout_constraintStart_toStartOf="@+id/profile_image"
-        app:layout_constraintTop_toBottomOf="@id/barrier10" />
+        <TextView
+            android:id="@+id/transportIncldTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:autoSizeTextType="uniform"
+            android:drawableLeft="@drawable/ic_tick_mark_icon"
+            android:fontFamily="@font/montserrat_alternates"
+            android:text="Transportation Included"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/_4sdp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/bloodGroupBoldTxt"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@id/barrier10" />
 
     <TextView
         android:id="@+id/monthTxt"
@@ -263,11 +263,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:autoSizeTextType="uniform"
-            android:background="@drawable/primary_color_button_shape"
             android:fontFamily="@font/montserrat_alternates"
             android:minHeight="0dp"
-            android:padding="1.5dp"
+            android:padding="10dp"
             android:text="Accept"
+            android:visibility="gone"
             android:textAllCaps="false"
             android:textColor="@drawable/primary_color_button_text_color"
             android:textSize="@dimen/_10sdp"
@@ -282,6 +282,18 @@
         app:barrierDirection="bottom"
         app:constraint_referenced_ids="donationTimeTxt,transportIncldTxt"
         tools:layout_editor_absoluteY="731dp" />
+
+        <ImageButton
+            android:id="@+id/postCallButton"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/transportIncldTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/transportIncldTxt"
+            android:src="@drawable/baseline_phone_24"
+            android:backgroundTint="@color/primaryColor"
+            app:tint="@color/white"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

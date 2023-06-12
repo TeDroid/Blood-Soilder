@@ -90,7 +90,7 @@ public class ProfileFragment extends Fragment {
                             user = task.getResult().toObject(User.class);
 
                             profileUserName.setText(user.getName());
-                            profileUserPhone.setText("01X XX XX XX XX");
+                            profileUserPhone.setText(user.getPhone().isEmpty()?"01X XX XX XX XX":user.getPhone());
                             profileUserEmail.setText(user.getEmail());
                             profileUserBloodGroup.setText(user.getBlood_group());
                             Glide.with(getContext())

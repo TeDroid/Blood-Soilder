@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -55,6 +56,7 @@ public class PostAdapter  extends  RecyclerView.Adapter<PostAdapter.PostViewHold
         holder.addressSeekerTxt.setText(item.getHospitalAddress());
         holder.hospitalLocationTxt.setText(item.getHospitalName());
         holder.seekerNameTxt.setText(item.getRequestOwnerName());
+        holder.phnSeekerTxt.setText(item.getContactNumber());
         if (item.isTransportationExpense())holder.transportIncldTxt.setVisibility(View.VISIBLE);
         holder.monthTxt.setText(Utils.getMonth(item.getTime()));
         holder.donationTimeTxt.setText(Utils.geTime(item.getTime()));
@@ -71,10 +73,12 @@ public class PostAdapter  extends  RecyclerView.Adapter<PostAdapter.PostViewHold
             holder.postRemoveButton.setVisibility(View.VISIBLE);
             holder.postStatus.setVisibility(View.VISIBLE);
             holder.acceptReqBtn.setVisibility(View.GONE);
+            holder.postCallButton.setVisibility(View.GONE);
         }else {
             holder.postRemoveButton.setVisibility(View.GONE);
             holder.postStatus.setVisibility(View.GONE);
-            holder.acceptReqBtn.setVisibility(View.VISIBLE);
+            holder.acceptReqBtn.setVisibility(View.GONE);
+            holder.postCallButton.setVisibility(View.VISIBLE);
 
         }
         holder.acceptReqBtn.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +104,12 @@ public class PostAdapter  extends  RecyclerView.Adapter<PostAdapter.PostViewHold
 
             }
         });
+        holder.postCallButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                postItemClickListener.OnCallClick(item.getContactNumber()==null?"":item.getContactNumber());
+            }
+        });
 
 
 
@@ -117,6 +127,7 @@ public class PostAdapter  extends  RecyclerView.Adapter<PostAdapter.PostViewHold
         public Button acceptReqBtn,postRemoveButton;
         public SwitchCompat postStatus;
         public CircleImageView profile_image;
+        public ImageButton postCallButton;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -134,6 +145,7 @@ public class PostAdapter  extends  RecyclerView.Adapter<PostAdapter.PostViewHold
             acceptReqBtn = itemView.findViewById(R.id.acceptReqBtn);
             postRemoveButton = itemView.findViewById(R.id.postRemoveButton);
             profile_image = itemView.findViewById(R.id.profile_image);
+            postCallButton = itemView.findViewById(R.id.postCallButton);
 
         }
     }
@@ -147,5 +159,6 @@ public class PostAdapter  extends  RecyclerView.Adapter<PostAdapter.PostViewHold
         void OnAcceptClick();
         void OnRemoveClick(String pId);
         void OnStatusChanged(String pId,boolean status);
+        void OnCallClick(String phone);
     }
 }

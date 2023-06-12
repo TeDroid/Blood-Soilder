@@ -44,10 +44,29 @@
         android:textColor="@color/white"
         android:textColorHint="@color/pale_white"
         android:textCursorDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEdt"
+        app:layout_constraintBottom_toTopOf="@+id/phoneEdt"
         app:layout_constraintEnd_toEndOf="@+id/nameEdt"
         app:layout_constraintStart_toStartOf="@+id/nameEdt"
         app:layout_constraintTop_toBottomOf="@+id/nameEdt" />
+    <EditText
+        android:id="@+id/phoneEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="left"
+        android:hint="Phone"
+        android:inputType="phone"
+        android:textColor="@color/white"
+        android:textColorHint="@color/pale_white"
+        android:textCursorDrawable="@null"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEdt"
+        app:layout_constraintEnd_toEndOf="@+id/emailEdt"
+        app:layout_constraintStart_toStartOf="@+id/emailEdt"
+        app:layout_constraintTop_toBottomOf="@+id/emailEdt"
+        />
+
 
     <EditText
         android:id="@+id/passwordEdt"
@@ -63,9 +82,9 @@
         android:textColorHint="@color/pale_white"
         android:textCursorDrawable="@null"
         app:layout_constraintBottom_toTopOf="@+id/confirmPasswordEdt"
-        app:layout_constraintEnd_toEndOf="@+id/emailEdt"
-        app:layout_constraintStart_toStartOf="@+id/emailEdt"
-        app:layout_constraintTop_toBottomOf="@+id/emailEdt" />
+        app:layout_constraintEnd_toEndOf="@+id/phoneEdt"
+        app:layout_constraintStart_toStartOf="@+id/phoneEdt"
+        app:layout_constraintTop_toBottomOf="@+id/phoneEdt" />
 
     <EditText
         android:id="@+id/confirmPasswordEdt"

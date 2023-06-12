@@ -6,6 +6,7 @@ public class User {
 
     private String name;
     private  String email;
+    private  String phone;
     private  String password;
     private int  user_type;
     private boolean  status;
@@ -16,13 +17,12 @@ public class User {
     private Double lon;
     private boolean donation_status;
     private String profileImage;
-    private String phone;
 
 
     public User() {
     }
 
-    public User(String name, String email,String phone, String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
+    public User(String name, String email, String phone,  String password, int user_type, boolean status, String uid, String blood_group, long account_created_at, Double lat, Double lon, boolean donation_status, String profileImage) {
         this.name = name;
         this.email = email;
         this.password = password;
