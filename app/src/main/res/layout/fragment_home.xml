@@ -67,6 +67,7 @@
         android:elevation="@dimen/_5sdp"
         app:cardCornerRadius="@dimen/_18sdp"
         app:cardMaxElevation="@dimen/_7sdp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 

@@ -84,6 +84,7 @@
                 android:elevation="@dimen/_7sdp"
                 app:cardCornerRadius="@dimen/_7sdp"
                 app:cardMaxElevation="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                >
 
                 <EditText
@@ -102,6 +103,9 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/setLocationCV"
@@ -112,6 +116,8 @@
                 android:elevation="@dimen/_7sdp"
                 app:cardCornerRadius="@dimen/_7sdp"
                 app:cardMaxElevation="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+
                 >
 
                 <EditText

@@ -4,12 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userNameUpdate"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/outlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
@@ -29,7 +30,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userEmailUpdate"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/outlinedStyle"
+        app:boxStrokeColor="@color/primaryColor"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email"
@@ -48,7 +51,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userPhoneUpdate"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/outlinedStyle"
+        app:boxStrokeColor="@color/primaryColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="phone"

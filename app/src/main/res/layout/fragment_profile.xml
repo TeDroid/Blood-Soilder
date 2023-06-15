@@ -75,7 +75,6 @@
                 android:alpha=".5"
                 android:padding="@dimen/_7sdp"
                 android:text="Name"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
             <TextView
@@ -87,7 +86,6 @@
                 android:alpha=".8"
                 android:padding="@dimen/_7sdp"
                 android:textAlignment="textEnd"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
 
@@ -105,7 +103,6 @@
                 android:alpha=".5"
                 android:padding="@dimen/_7sdp"
                 android:text="Phone"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
             <TextView
@@ -118,7 +115,6 @@
                 android:padding="@dimen/_7sdp"
                 android:text=""
                 android:textAlignment="textEnd"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
 
@@ -136,7 +132,6 @@
                 android:alpha=".5"
                 android:padding="@dimen/_7sdp"
                 android:text="Email"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
             <TextView
@@ -149,7 +144,6 @@
                 android:padding="@dimen/_7sdp"
                 android:text=""
                 android:textAlignment="textEnd"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
 
@@ -167,7 +161,6 @@
                 android:alpha=".5"
                 android:padding="@dimen/_7sdp"
                 android:text="Blood Group"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
             <TextView
@@ -180,7 +173,6 @@
                 android:padding="@dimen/_7sdp"
                 android:text=""
                 android:textAlignment="textEnd"
-                android:textColor="@color/textColorD"
                 android:textSize="@dimen/_12sdp" />
 
 
@@ -197,7 +189,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/profileCircleImageView"
         app:layout_constraintStart_toEndOf="@+id/profileCircleImageView"
         app:layout_constraintTop_toTopOf="@+id/profileCircleImageView"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintVertical_bias="0.812"
+        app:tint="@color/primaryColor" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:fitsSystemWindows">true</item>
+
         <!-- Customize your theme here. -->
     </style>
 
@@ -37,5 +38,9 @@
     </style>
 
 
-
+<style name="outlinedStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <item name="hintTextColor">@color/hintColorD</item>
+    <item name="boxStrokeColor">@color/primaryColor</item>
+    <item name="android:textColor">@color/black</item>
+</style>
 </resources>
