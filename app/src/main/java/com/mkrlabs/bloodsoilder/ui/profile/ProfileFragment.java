@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -51,6 +53,7 @@ public class ProfileFragment extends Fragment {
     private BottomSheetDialog bottomSheetDialog ;
     private User user;
     private FirebaseFirestore firebaseFirestore;
+    private SwitchCompat profileUserDonorStatus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,29 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        profileUserDonorStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+
+                    firebaseFirestore.collection(NodeName.USER_NODE).document(myShreadPref.getUID())
+                            .update("donation_status",b)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Display.successToast(getContext(),"Status Updated Successfully");
+                                    }else {
+                                        task.getException().printStackTrace();
+                                        Display.successToast(getContext(),"Something went wrong");
+                                    }
+                                }
+                            });
+
+
+            }
+        });
+
     }
 
     private void initUser() {
@@ -98,6 +124,8 @@ public class ProfileFragment extends Fragment {
                                     .placeholder(R.drawable.bubble)
                                     .error(R.drawable.bubble)
                                     .into(profileCircleImageView);
+                            profileUserDonorStatus.setChecked(user.isDonation_status());
+
                         }else {
 
                             Log.v("Error",task.getException().getLocalizedMessage());
@@ -127,6 +155,7 @@ public class ProfileFragment extends Fragment {
         if (user!=null) {
             updateNameEdt.setText(user.getName());
             updateEmailEdt.setText(user.getEmail());
+            updatePhoneEdt.setText(user.getPhone().isEmpty()?"":user.getPhone());
         }
 
 
@@ -191,6 +220,7 @@ public class ProfileFragment extends Fragment {
         profileUserPhone = view.findViewById(R.id.profileUserPhone);
         profileUserEmail = view.findViewById(R.id.profileUserEmail);
         profileUserBloodGroup = view.findViewById(R.id.profileUserBloodGroup);
+        profileUserDonorStatus = view.findViewById(R.id.profileUserDonorStatus);
         profileEditIcon = view.findViewById(R.id.profileEditIcon);
         profileProgressBar = view.findViewById(R.id.profileProgressBar);
         profileCircleImageView = view.findViewById(R.id.profileCircleImageView);

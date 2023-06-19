@@ -8,46 +8,6 @@
     tools:context=".ui.home.HomeFragment">
 
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/homeToolConsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/action_bar_design"
-            android:elevation="@dimen/_2sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageButton
-                android:id="@+id/homeLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:padding="@dimen/_7sdp"
-                android:src="@drawable/baseline_logout_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/primaryColor" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/montserrat_alternates_bold"
-                android:padding="@dimen/_10sdp"
-                android:text="@string/app_name"
-                android:textColor="@color/primaryColor"
-                android:textSize="@dimen/_15sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRV"
         android:layout_width="match_parent"
@@ -55,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeToolConsLayout"
+        app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="4"
         tools:listitem="@layout/layout_seeker_to_donor_notification" />
 

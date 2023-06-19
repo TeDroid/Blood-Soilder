@@ -91,7 +91,6 @@ public class HomeFragment extends Fragment {
     private MySharedPref sharedPref;
     private User user;
     private ApiServices apiServices ;
-    private ImageButton homeLogout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -123,29 +122,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        homeLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                new AlertDialog.Builder(getContext())
-                        .setTitle("Logout ")
-                        .setMessage("Are you sure you want to logout ?")
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                FirebaseAuth.getInstance().signOut();
-                                Intent intent = new Intent(getContext(), LoginActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                getActivity().finish();
-                            }
-                        })
-
-                        // A null listener allows the button to dismiss the dialog and take no further action.
-                        .setNegativeButton(android.R.string.no, null)
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-            }
-        });
 
         adapter.setPostItemClickListener(new PostAdapter.PostItemClickListener() {
             @Override
@@ -169,8 +145,8 @@ public class HomeFragment extends Fragment {
                 if (phone.isEmpty() || phone ==null){
                     Display.infoToast(getContext(),"User doesn't update his phone number");
                 }else {
-                    String user_phone = "+34666777888";
-                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", user_phone, null));
+
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
                     startActivity(intent);
 
                 }
@@ -197,7 +173,6 @@ public class HomeFragment extends Fragment {
     private void init(View view) {
         postList = new ArrayList<>();
         homeBloodSearch = view.findViewById(R.id.homeBloodSearch);
-        homeLogout = view.findViewById(R.id.homeLogout);
         homeRV = view.findViewById(R.id.homeRV);
         progressBarHome = view.findViewById(R.id.progressBarHome);
         setUpRecycleView();

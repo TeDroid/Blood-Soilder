@@ -49,4 +49,16 @@
         app:layout_constraintStart_toStartOf="@+id/requestedRV"
         app:layout_constraintTop_toBottomOf="@+id/appbarConstrainLayout" />
 
+    <TextView
+        android:id="@+id/requestNoDataFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Data Found"
+        android:visibility="gone"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/requestedRV"
+        app:layout_constraintStart_toStartOf="@+id/requestedRV"
+        app:layout_constraintTop_toBottomOf="@+id/appbarConstrainLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,6 +21,7 @@ import com.mkrlabs.bloodsoilder.Utils.MySharedPref;
 import com.mkrlabs.bloodsoilder.ui.activity.ActivityFragment;
 import com.mkrlabs.bloodsoilder.ui.home.HomeFragment;
 import com.mkrlabs.bloodsoilder.ui.homemap.HomeMapFragment;
+import com.mkrlabs.bloodsoilder.ui.new_home.PreviewFragment;
 import com.mkrlabs.bloodsoilder.ui.profile.ProfileFragment;
 import com.mkrlabs.bloodsoilder.ui.request.RequestFragment;
 import com.mkrlabs.customstatusbar.CustomStatusBar;
@@ -50,21 +51,18 @@ public class HomeActivity extends AppCompatActivity {
 
 
         homeBottomNavigation.setSelectedItemId(R.id.homeItem);
-        setUpFragment(new HomeFragment());
+        setUpFragment(new PreviewFragment());
         homeBottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.homeItem:
-                        setUpFragment(new HomeFragment());
+                        setUpFragment(new PreviewFragment());
                         return true;
                     case R.id.requestItem:
                         setUpFragment(new RequestFragment());
                         return true;
-                   /* case R.id.activityItem:
-                        setUpFragment(new ActivityFragment());
-                        return true;
-                        */
+
                     case R.id.profileItem:
                         setUpFragment(new ProfileFragment());
                         return true;

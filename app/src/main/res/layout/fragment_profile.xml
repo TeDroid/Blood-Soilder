@@ -177,6 +177,35 @@
 
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha=".5"
+                android:padding="@dimen/_7sdp"
+                android:text="Donor Status"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/profileUserDonorStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:alpha=".8"
+                android:padding="@dimen/_7sdp"
+                android:text=""
+                android:textAlignment="textEnd"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

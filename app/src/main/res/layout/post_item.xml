@@ -39,18 +39,18 @@
         app:layout_constraintStart_toStartOf="@+id/hospitalLocationTxt"
         app:layout_constraintTop_toBottomOf="@+id/hospitalLocationTxt" />
 
-    <TextView
-        android:id="@+id/phnSeekerTxt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/montserrat_alternates"
-        android:text=""
-        android:textColor="@color/ash_black"
-        android:textSize="@dimen/_7sdp"
-        app:layout_constraintEnd_toEndOf="@+id/seekerNameTxt"
-        app:layout_constraintStart_toStartOf="@+id/seekerNameTxt"
-        app:layout_constraintTop_toBottomOf="@+id/seekerNameTxt" />
+        <TextView
+            android:id="@+id/phnSeekerTxt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/montserrat_alternates"
+            android:text=""
+            android:textColor="@color/ash_black"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+            app:layout_constraintEnd_toEndOf="@+id/seekerNameTxt"
+            app:layout_constraintStart_toStartOf="@+id/seekerNameTxt"
+            app:layout_constraintTop_toBottomOf="@+id/seekerNameTxt" />
 
     <TextView
         android:id="@+id/hospitalLocationTxt"
@@ -92,7 +92,7 @@
             android:id="@+id/transportIncldTxt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="12dp"
             android:autoSizeTextType="uniform"
             android:drawableLeft="@drawable/ic_tick_mark_icon"
             android:fontFamily="@font/montserrat_alternates"
@@ -101,10 +101,11 @@
             android:textSize="@dimen/_4sdp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="@+id/bloodGroupBoldTxt"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/profile_image"
             app:layout_constraintTop_toBottomOf="@id/barrier10" />
 
-    <TextView
+        <TextView
         android:id="@+id/monthTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

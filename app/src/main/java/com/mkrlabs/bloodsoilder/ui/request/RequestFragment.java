@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -49,6 +50,7 @@ public class RequestFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private ArrayList<BloodRequestItem> postList;
     private MySharedPref sharedPref;
+    public TextView requestNoDataFound;
     public RequestFragment() {
         // Required empty public constructor
 
@@ -147,6 +149,7 @@ public class RequestFragment extends Fragment {
         postList = new ArrayList<>();
         sharedPref= new MySharedPref(getContext());
         requestedRV = view.findViewById(R.id.requestedRV);
+        requestNoDataFound = view.findViewById(R.id.requestNoDataFound);
         setUpRecycleView();
         progressBar = view.findViewById(R.id.requestedProgressBar);
     }
@@ -175,6 +178,11 @@ public class RequestFragment extends Fragment {
                         if (requestItem.getRequestBy().equals(sharedPref.getUID())){
                             postList.add(requestItem);
                         }
+                    }
+                    if (postList.isEmpty()){
+                        requestNoDataFound.setVisibility(View.VISIBLE);
+                    }else {
+                        requestNoDataFound.setVisibility(View.GONE);
                     }
                 }else {
                     progressBar.setVisibility(View.GONE);
